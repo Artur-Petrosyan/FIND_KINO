@@ -7,8 +7,10 @@ const App = () => {
     <div className="App">
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
+        {/* <Route path="/" element={<Home />} />
+        <Route path="/products" element={<Products />} /> */}
+          {/* <Route path="products/:id" element={<SingleProduct />} /> */}
+
       </Routes>
 
     </div>
