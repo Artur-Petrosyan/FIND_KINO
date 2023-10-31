@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(15, 10, 222, 1);
+}
+
+.header__nav {
+    & ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:300px;
+        & li {
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            &:hover {
+                opacity: 0.5;
+            }
+        }
+
+    }
+}
