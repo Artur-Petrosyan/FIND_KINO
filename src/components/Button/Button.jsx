@@ -1,8 +1,6 @@
-
-
-const Button = ({ children, ...rest}) => {
+const Button = ({ children, variant = '', ...rest }) => {
     return (
-        <button {...rest}>
+        <button {...rest} className={`button ${variant}`}>
             {children}
         </button>
     );

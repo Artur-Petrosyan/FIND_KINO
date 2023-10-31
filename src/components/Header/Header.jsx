@@ -1,4 +1,5 @@
 import '../../styles/header.scss'
+import Button from '../Button/Button';
 const Header = () => {
     return (
         <header className='header'>
@@ -8,6 +9,7 @@ const Header = () => {
                     <li className='nav__li'>Products</li>
                   </ul>
             </nav>
+            <Button variant={'button-logout'}>Log out</Button>
         </header>
     );
 };
