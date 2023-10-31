@@ -1,9 +1,9 @@
 import Header from "./components/Header/Header";
-
+import '../src/styles/reset.scss'
 const App = () => {
   return (
     <div className="App">
-         <Header />
+      <Header />
     </div>
   );
 }
