@@ -4,15 +4,15 @@ import '../src/styles/reset.scss'
 import '../src/styles/common.scss'
 import Home from "./pages/Home/Home";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
-import Products from "./pages/Products/Products";
+import Shows from "./pages/Shows/Shows";
 const App = () => {
   return (
     <div className="App">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<Products />} />
-        <Route path="products/:id" element={<SingleProduct />} />
+        <Route path='shows' element={<Shows />} />
+        <Route path='shows/:id/:name' element={<SingleProduct />} />
       </Routes>
     </div>
   );

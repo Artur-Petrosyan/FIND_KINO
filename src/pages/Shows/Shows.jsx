@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { productsSelector } from '../../redux/selectors/products';
-import { getProducts } from '../../redux/actions/asyncGetProducts';
+import { showsSelector } from '../../redux/selectors/showes';
+import { getShowes } from '../../redux/actions/asyncGetShowes';
 import { API_ENDPOINTS } from '../../constants/api';
 
-const Products = () => {
+const Showes = () => {
     const dispatch = useDispatch()
-    const products = useSelector(productsSelector)
+    const products = useSelector(showsSelector)
 
     useEffect(() => {
-        dispatch(getProducts(API_ENDPOINTS.PRODUCTS))
+        dispatch(getShowes(API_ENDPOINTS.SHOWS))
     }, [dispatch])
     return (
         <div>
@@ -20,4 +20,4 @@ const Products = () => {
     );
 };
 
-export default Products;
+export default Showes;
