@@ -3,5 +3,5 @@ import { GET_PRODUCTS } from "../../constants/types"
 
 export const getProducts = (endpoint) => async (dispatch) => {
     const data = await createGetRequest(endpoint)
-   dispatch({ type: GET_PRODUCTS, data: data })
+    dispatch({ type: GET_PRODUCTS, data: data })
 }

@@ -13,9 +13,9 @@ const Products = () => {
     }, [dispatch])
     return (
         <div>
-            {/* {products.map(({ id, title }) =>
+            {products.map(({ id, title }) =>
                 <h1 key={id}>{title}</h1>
-            )} */}
+            )}
         </div>
     );
 };

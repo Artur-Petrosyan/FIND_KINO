@@ -13,12 +13,10 @@ export const createGetRequest = async (endpoint) => {
     return fetchGet(endpoint)
 }
 
-
 export const createGetRequsetWithParams = async (endpoint, offset, limit) => {
     const endpoints = `${endpoint}/?offset=${offset}&limit=${limit}`
     return fetchGet(endpoints)
 }
-
 
 export const createGetById = async (endpoint, id) => {
     const endpoints = `${endpoint}/${id}`
