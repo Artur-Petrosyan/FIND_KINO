@@ -1,1 +1,0 @@
-export const showsSelector = (state) => state.showes
