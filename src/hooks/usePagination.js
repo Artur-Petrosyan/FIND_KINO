@@ -1,4 +1,6 @@
-const usePagination = (shows,pageNumber) => {
+import { useSelector } from "react-redux";
+
+const usePagination = (shows, pageNumber) => {
     const limit = 9;
     const lastShow = pageNumber * limit;
     const firstShow = lastShow - limit;

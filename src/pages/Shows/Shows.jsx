@@ -5,24 +5,27 @@ import { getShowes } from '../../redux/actions/asyncGetShowes';
 import { API_ENDPOINTS } from '../../constants/api';
 import Pagination from '../../components/Pagination/Pagination';
 import usePagination from '../../hooks/usePagination'
+import { useParams } from 'react-router-dom';
 const Showes = () => {
-    const [pageNumber, setPageNumber] = useState(1)
+    const params = useParams()
+    const [pageNumber, setPageNumber] = useState(params.page)
+
     const dispatch = useDispatch()
     const shows = useSelector(showsSelector)
-    const slicedShows = usePagination(shows, pageNumber)
-
+    const sliced = usePagination(shows, pageNumber)
     useEffect(() => {
         dispatch(getShowes(API_ENDPOINTS.SHOWS))
+       
     }, [dispatch])
 
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {slicedShows.map(({ id, image, name }) =>
+            {sliced.map(({ id, image, name }) =>
                 <div key={id} style={{ margin: 20 }}>
                     <img src={image.medium} alt="" />
                 </div>
             )}
-            <Pagination shows={shows} setPageNumber={setPageNumber} pageNumber={pageNumber} />
+            <Pagination shows={shows} pageNumber={pageNumber}  setPageNumber={setPageNumber}/>
         </div>
     );
 };

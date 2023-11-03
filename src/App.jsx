@@ -12,8 +12,8 @@ const App = () => {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path='shows' element={<Shows />} />
-        <Route path='shows/:id/:name' element={<SingleProduct />} />
+        <Route path='/shows/:page' element={<Shows />} />
+        <Route path='/shows/:page/:id/:name' element={<SingleProduct />} />
         <Route path='*' element={<PageNotFound />} />
       </Routes>
     </div>
