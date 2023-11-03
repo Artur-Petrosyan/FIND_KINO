@@ -5,6 +5,7 @@ import '../src/styles/common.scss'
 import Home from "./pages/Home/Home";
 import SingleProduct from "./pages/SingleProduct/SingleProduct";
 import Shows from "./pages/Shows/Shows";
+import PageNotFound from "./pages/PageNotFound/PageNotFound";
 const App = () => {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path='shows' element={<Shows />} />
         <Route path='shows/:id/:name' element={<SingleProduct />} />
+        <Route path='*' element={<PageNotFound />} />
       </Routes>
     </div>
   );
