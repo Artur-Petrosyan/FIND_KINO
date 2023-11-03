@@ -1,7 +1,7 @@
 export const BASE_URL = 'https://api.tvmaze.com/'
 
 export const API_ENDPOINTS = {
-    PRODUCTS: 'products',
+    SHOWS: 'shows',
     CATEGORIES: 'categories',
     USERS: "users",
 }
