@@ -6,15 +6,15 @@ import { API_ENDPOINTS } from '../../constants/api';
 
 const Showes = () => {
     const dispatch = useDispatch()
-    const products = useSelector(showsSelector)
+    const shows = useSelector(showsSelector)
 
     useEffect(() => {
         dispatch(getShowes(API_ENDPOINTS.SHOWS))
     }, [dispatch])
     return (
         <div>
-            {products.map(({ id, title }) =>
-                <h1 key={id}>{title}</h1>
+            {shows.map(({ id, name }) =>
+                <h1 key={id}>{name}</h1>
             )}
         </div>
     );
