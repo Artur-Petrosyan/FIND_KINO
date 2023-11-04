@@ -47,8 +47,8 @@ const Showes = () => {
                         rating={rating.average}
                     />
                 )}
-                <Pagination shows={shows} pageNumber={pageNumber} setPageNumber={setPageNumber} />
             </div>
+            <Pagination shows={shows} pageNumber={pageNumber} setPageNumber={setPageNumber} />
         </div>
     );
 };
