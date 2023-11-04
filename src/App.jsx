@@ -10,12 +10,14 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path='/shows/:page' element={<Shows />} />
-        <Route path='/shows/:page/:id/:name' element={<SingleProduct />} />
-        <Route path='*' element={<PageNotFound />} />
-      </Routes>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path='/shows/:page' element={<Shows />} />
+          <Route path='/shows/:page/:id/:name' element={<SingleProduct />} />
+          <Route path='*' element={<PageNotFound />} />
+        </Routes>
+      </div>
     </div>
   );
 }
