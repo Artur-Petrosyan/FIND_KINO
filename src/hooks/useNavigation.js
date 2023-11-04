@@ -7,6 +7,9 @@ export const useNavigation = () => {
         if (lowerPath === 'home') {
             return navigate('/')
         }
+        if (lowerPath === 'shows') {
+            return navigate('shows/1')
+        }
         return navigate(lowerPath)
     }
 
