@@ -1,5 +1,5 @@
 const sliceForPagination = (shows, pageNumber) => {
-    const limit = 9;
+    const limit = 16;
     const lastShow = pageNumber * limit;
     const firstShow = lastShow - limit;
     let slicedShows = shows.slice(firstShow, lastShow)
