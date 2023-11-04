@@ -1,6 +1,7 @@
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 import '../../styles/pagination.scss'
+import Button from "../Button/Button";
 const Pagination = memo(({ shows, setPageNumber, pageNumber }) => {
     const navigate = useNavigate()
     let numOfPages = []
@@ -12,7 +13,8 @@ const Pagination = memo(({ shows, setPageNumber, pageNumber }) => {
         <div className='pagination' >
             {numOfPages.map((num) =>
                 <div key={num} className={`pagination__number  ${pageNumber === num ? 'active' : ''}`} >
-                    <button className="pagination__button"
+                    <Button
+                        variant="pagination__button"
                         onClick={() => {
                             if (num === pageNumber) return
                             navigate(`/shows/${Number(num)}`);
@@ -20,7 +22,7 @@ const Pagination = memo(({ shows, setPageNumber, pageNumber }) => {
                         }}
                     >
                         {num}
-                    </button>
+                    </Button>
                 </div>
             )}
         </div>
