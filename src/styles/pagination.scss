@@ -1,0 +1,27 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    
+    padding: 10px;
+  }
+  
+  .pagination__number {
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+  
+    &.active {
+      font-weight: bold;
+    }
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+
+
+  .active {
+    opacity: 0.5;
+  }
