@@ -1,6 +1,5 @@
-import { useSelector } from "react-redux";
-
-const usePagination = (shows, pageNumber) => {
+const sliceForPagination = (shows, pageNumber) => {
+    console.log("WORKED");
     const limit = 9;
     const lastShow = pageNumber * limit;
     const firstShow = lastShow - limit;
@@ -8,4 +7,4 @@ const usePagination = (shows, pageNumber) => {
     return slicedShows;
 }
 
-export default usePagination;
+export default sliceForPagination;
