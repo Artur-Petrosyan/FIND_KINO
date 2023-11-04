@@ -15,7 +15,6 @@ const Showes = () => {
     const navigate = useNavigate()
 
     const [pageNumber, setPageNumber] = useState(params.page)
-    const [counter, setCounter] = useState(1)
     const shows = useSelector(showsSelector)
     const sliced = useMemo(() => {
         return sliceForPagination(shows, pageNumber)
@@ -36,7 +35,6 @@ const Showes = () => {
     }, [dispatch, sliced])
     return (
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            <button onClick={() => setCounter(counter + 1)}></button>
             {sliced.map(({ id, image, name }) =>
                 <div key={id} style={{ margin: 20 }} onClick={() => {
                     navigateWithRegex(id, name)
