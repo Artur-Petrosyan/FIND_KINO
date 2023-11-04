@@ -1,5 +1,4 @@
 const sliceForPagination = (shows, pageNumber) => {
-    console.log("WORKED");
     const limit = 9;
     const lastShow = pageNumber * limit;
     const firstShow = lastShow - limit;
