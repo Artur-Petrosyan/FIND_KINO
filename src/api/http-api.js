@@ -13,8 +13,8 @@ export const createGetRequest = async (endpoint) => {
     return fetchGet(endpoint)
 }
 
-export const createGetRequsetWithParams = async (endpoint, offset, limit) => {
-    const endpoints = `${endpoint}/?offset=${offset}&limit=${limit}`
+export const createGetRequsetForSingleShow = async (endpoint,id) => {
+    const endpoints = `${endpoint}/${id}`
     return fetchGet(endpoints)
 }
 
