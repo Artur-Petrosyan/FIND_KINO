@@ -9,7 +9,7 @@ const Pagination = memo(({ shows, setPageNumber, pageNumber }) => {
         numOfPages.push(i)
     }
     return (
-        <div className='pagination' style={{ display: 'flex', fontSize: 30 }}>
+        <div className='pagination' >
             {numOfPages.map((num) =>
                 <div key={num} className='pagination__number' style={{ margin: 5, cursor: 'pointer' }}>
                     <span onClick={() => {
