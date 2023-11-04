@@ -8,6 +8,7 @@ import sliceForPagination from '../../hooks/usePagination'
 import { useNavigate, useParams } from 'react-router-dom';
 import navigateToRegex from '../../utils/navigateToRegex.js';
 import { setPageAction } from '../../redux/actions/setPage.js';
+import Card from '../../components/Card/Card.jsx';
 
 const Showes = () => {
     const params = useParams()
@@ -34,13 +35,16 @@ const Showes = () => {
         dispatch(setPageAction(sliced))
     }, [dispatch, sliced])
     return (
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-            {sliced.map(({ id, image, name }) =>
-                <div key={id} style={{ margin: 20 }} onClick={() => {
-                    navigateWithRegex(id, name)
-                }}>
-                    <img src={image.medium} alt="img" />
-                </div>
+        <div className='shows'>
+            {sliced.map(({ id, image, name, rating }) =>
+                <Card
+                    key={id}
+                    id={id}
+                    name={name}
+                    image={image.original}
+                    navigateWithRegex={navigateWithRegex}
+                    rating={rating.average}
+                />
             )}
             <Pagination shows={shows} pageNumber={pageNumber} setPageNumber={setPageNumber} />
         </div>
