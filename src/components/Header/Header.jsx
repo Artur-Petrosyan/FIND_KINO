@@ -4,7 +4,6 @@ import { navList } from '../../constants/headerNavList';
 import NavBar from '../NavBar/NavBar';
 
 const Header = () => {
-
     return (
         <header className='header'>
             <NavBar navList={navList} />

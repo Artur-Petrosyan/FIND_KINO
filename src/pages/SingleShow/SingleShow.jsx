@@ -14,6 +14,7 @@ const SingleShow = () => {
         const path = name.toLowerCase()
         navigate(`${path}`)
     }
+    
     const { id } = useParams()
     const singleShow = useSelector(singleShowSelector)
     useEffect(() => {

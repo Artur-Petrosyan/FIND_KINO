@@ -8,25 +8,34 @@ import { getShowInfo } from '../../redux/actions/asyncGetShowInfo';
 import Card from '../../components/Card/Card';
 import { singleShowInfoSelector } from '../../redux/selectors/singleShowInfo';
 
-const SingleShowInfo = () => {
+const SingleShowInfo = ({ singleShow }) => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
+
     const showInfo = useSelector(singleShowInfoSelector)
- 
     useEffect(() => {
-        if (info) {
+        if (info !== 'main') {
             dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
         }
-    },[id,info,dispatch])
+    }, [id, info, dispatch])
     return (
         <div>
-            {showInfo.map(({ id, name, image }) => (
-                <Card
-                    key={id}
-                    name={name}
-                    image={image?.original}
-                />
-            ))}
+            {info === 'main' || info ?
+
+                showInfo.map(({ id, name, image }) => (
+                    <Card
+                        key={id}
+                        name={name}
+                        image={image?.original}
+                    />
+                ))
+                : singleShow.map(({ id, name, image }) => (
+                    <Card
+                        key={id}
+                        name={name}
+                        image={image?.original}
+                    />))
+            }
         </div>
     );
 };
