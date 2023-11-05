@@ -15,8 +15,8 @@ const SingleShow = () => {
         dispatch(getSingleShow(API_ENDPOINTS.SHOWS, id))
     }, [dispatch, id])
     return (
-        <div>
-            <div>
+        <div >
+            <div className='nav__bar'>
                 <NavBar navList={subMenuList} subMenu={true}/>
             </div>
             {

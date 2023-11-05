@@ -3,36 +3,51 @@ import { v4 } from "uuid"
 const subMenuList = [
     {
         id: v4(),
-        name: 'Main'
+        name: 'Main',
+        active : true,
     },
     {
         id: v4(),
-        name: 'Episodes'
+        name: 'Episodes',
+        active : false,
+
     },
 
     {
         id: v4(),
-        name: 'Seasons'
+        name: 'Seasons',
+        active : false,
+
     },
     {
         id: v4(),
-        name: 'Cast'
+        name: 'Cast',
+        active : false,
+
     },
     {
         id: v4(),
-        name: 'Crew'
+        name: 'Crew',
+        active : false,
+
     },
     {
         id: v4(),
-        name: 'Characters'
+        name: 'Characters',
+        active : false,
+
     },
     {
         id: v4(),
-        name: 'Gallery'
+        name: 'Gallery',
+        active : false,
+
     },
     {
         id: v4(),
-        name: 'News'
+        name: 'News',
+        active : false,
+
     }
 ]
 
