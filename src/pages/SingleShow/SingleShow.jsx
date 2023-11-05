@@ -17,7 +17,7 @@ const SingleShow = () => {
     return (
         <div>
             <div>
-                <NavBar navList={subMenuList} />
+                <NavBar navList={subMenuList} subMenu={true}/>
             </div>
             {
                 singleShow.map(({ id, name, image }) => {
