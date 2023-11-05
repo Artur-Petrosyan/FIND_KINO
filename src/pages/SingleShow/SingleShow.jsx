@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { getSingleShow } from '../../redux/actions/asyncSingleShow';
 import { API_ENDPOINTS } from '../../constants/api';
 import { singleShowSelector } from '../../redux/selectors/singleShow';
-import Card from '../../components/Card/Card'
 import NavBar from '../../components/NavBar/NavBar';
 import subMenuList from '../../constants/subMenuList';
+import SingleShowInfo from '../SingleShowInfo/SIngleShowInfo';
 const SingleShow = () => {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const navigateTo = (name) => {
+        const path = name.toLowerCase()
+        navigate(`${path}`)
+    }
     const { id } = useParams()
     const singleShow = useSelector(singleShowSelector)
     useEffect(() => {
@@ -17,19 +22,11 @@ const SingleShow = () => {
     return (
         <div >
             <div className='nav__bar'>
-                <NavBar navList={subMenuList} subMenu={true}/>
+                <NavBar navList={subMenuList} subMenu={true}  navigateTo={navigateTo}/>
             </div>
-            {
-                singleShow.map(({ id, name, image }) => {
-                    return (
-                            <Card
-                                key={id}
-                                name={name}
-                                image={image.original}
-                            />
-                    )
-                })
-            }
+            <div>
+                <SingleShowInfo singleShow={singleShow}  />
+            </div>
         </div >
     );
 };

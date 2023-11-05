@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Shows from "./pages/Shows/Shows";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SingleShow from "./pages/SingleShow/SingleShow";
+
 const App = () => {
   return (
     <div className="App">

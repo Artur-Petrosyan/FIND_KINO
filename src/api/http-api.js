@@ -18,12 +18,12 @@ export const createGetRequest = async (endpoint) => {
     return fetchGet(endpoint)
 }
 
-export const createGetRequsetForSingleShow = async (endpoint, id) => {
+export const createGetRequestForSingleShow = async (endpoint, id) => {
     const endpoints = `${endpoint}/${id}`
     return fetchGet(endpoints)
 }
 
-export const createGetRequsetShowInfo = async (endpoint, id, info) => {
+export const createGetRequestShowInfo = async (endpoint, id,  info) => {
     const endpoints = `${endpoint}/${id}/${info}`
     return fetchGet(endpoints)
 }
