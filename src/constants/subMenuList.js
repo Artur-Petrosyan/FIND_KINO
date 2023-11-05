@@ -1,38 +1,37 @@
 const subMenuList = [
     {
-        id : 1,
-        MAIN : 'Main'
+        id: 1,
+        MAIN: 'Main'
     },
     {
-        id : 2,
-        MAIN : 'Episodes'
+        id: 2,
+        EPISODES: 'Episodes'
     },
 
     {
-        id : 3,
-        MAIN : 'Seasons'
+        id: 3,
+        SEASEONS: 'Seasons'
     },
     {
-        id : 4,
-        MAIN : 'Cast'
+        id: 4,
+        CAST: 'Cast'
     },
     {
-        id : 5,
-        MAIN : 'Crew'
+        id: 5,
+        CREW: 'Crew'
     },
     {
-        id : 6,
-        MAIN : 'Characters'
+        id: 6,
+        CHARACTERS: 'Characters'
     },
     {
-        id : 7,
-        MAIN : 'Gallery'
+        id: 7,
+        GALLERY: 'Gallery'
     },
     {
-        id : 8,
-        MAIN : 'News'
-    },
-
+        id: 8,
+        NEWS: 'News'
+    }
 ]
 
 export default subMenuList
