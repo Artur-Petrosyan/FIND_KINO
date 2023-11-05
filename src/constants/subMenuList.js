@@ -1,35 +1,37 @@
+import { v4 } from "uuid"
+
 const subMenuList = [
     {
-        id: 1,
+        id: v4(),
         MAIN: 'Main'
     },
     {
-        id: 2,
+        id: v4(),
         EPISODES: 'Episodes'
     },
 
     {
-        id: 3,
+        id: v4(),
         SEASEONS: 'Seasons'
     },
     {
-        id: 4,
+        id: v4(),
         CAST: 'Cast'
     },
     {
-        id: 5,
+        id: v4(),
         CREW: 'Crew'
     },
     {
-        id: 6,
+        id: v4(),
         CHARACTERS: 'Characters'
     },
     {
-        id: 7,
+        id: v4(),
         GALLERY: 'Gallery'
     },
     {
-        id: 8,
+        id: v4(),
         NEWS: 'News'
     }
 ]

@@ -5,6 +5,8 @@ import { getSingleShow } from '../../redux/actions/asyncSingleShow';
 import { API_ENDPOINTS } from '../../constants/api';
 import { singleShowSelector } from '../../redux/selectors/singleShow';
 import Card from '../../components/Card/Card'
+import NavBar from '../../components/NavBar/NavBar';
+import subMenuList from '../../constants/subMenuList';
 const SingleShow = () => {
     const dispatch = useDispatch()
     const { id } = useParams()
@@ -14,16 +16,21 @@ const SingleShow = () => {
     }, [dispatch, id])
     return (
         <div>
-            {singleShow.map(({ id, name, image }) => {
-                return (
-                    <Card
-                        key={id}
-                        name={name}
-                        image={image.original}
-                    />
-                )
-            })}
-        </div>
+            <div>
+                <NavBar navList={subMenuList} />
+            </div>
+            {
+                singleShow.map(({ id, name, image }) => {
+                    return (
+                            <Card
+                                key={id}
+                                name={name}
+                                image={image.original}
+                            />
+                    )
+                })
+            }
+        </div >
     );
 };
 
