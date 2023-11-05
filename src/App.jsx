@@ -19,7 +19,6 @@ const App = () => {
           <Route path='shows/:page/:id/:name' element={<SingleShow />} >
             <Route path=':info' element={<SingleShowInfo />} />
           </Route>
-
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>

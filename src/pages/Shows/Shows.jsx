@@ -23,7 +23,7 @@ const Showes = () => {
 
     const navigateWithRegex = (id, name) => {
         const newName = navigateToRegex(name)
-        return navigate(`${id}/${newName}`)
+        return navigate(`${id}/${newName}/main`)
     }
 
 

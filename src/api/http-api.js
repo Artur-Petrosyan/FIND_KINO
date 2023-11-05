@@ -23,7 +23,7 @@ export const createGetRequestForSingleShow = async (endpoint, id) => {
     return fetchGet(endpoints)
 }
 
-export const createGetRequestShowInfo = async (endpoint, id,  info) => {
+export const createGetRequestShowInfo = async (endpoint, id, info) => {
     const endpoints = `${endpoint}/${id}/${info}`
     return fetchGet(endpoints)
 }

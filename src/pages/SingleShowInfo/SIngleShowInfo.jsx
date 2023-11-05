@@ -18,10 +18,10 @@ const SingleShowInfo = ({ singleShow }) => {
             dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
         }
     }, [id, info, dispatch])
+    console.log(info);
     return (
         <div>
-            {info === 'main' || info ?
-
+            {info !== 'main' ?
                 showInfo.map(({ id, name, image }) => (
                     <Card
                         key={id}
@@ -29,7 +29,8 @@ const SingleShowInfo = ({ singleShow }) => {
                         image={image?.original}
                     />
                 ))
-                : singleShow.map(({ id, name, image }) => (
+                :
+                singleShow.map(({ id, name, image }) => (
                     <Card
                         key={id}
                         name={name}
