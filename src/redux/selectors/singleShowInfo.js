@@ -1,0 +1,1 @@
+export const singleShowInfoSelector = (state) => state.singleShowInfo

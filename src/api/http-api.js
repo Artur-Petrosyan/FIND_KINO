@@ -23,7 +23,7 @@ export const createGetRequsetForSingleShow = async (endpoint, id) => {
     return fetchGet(endpoints)
 }
 
-export const createGetById = async (endpoint, id) => {
-    const endpoints = `${endpoint}/${id}`
+export const createGetRequsetShowInfo = async (endpoint, id, info) => {
+    const endpoints = `${endpoint}/${id}/${info}`
     return fetchGet(endpoints)
 }
