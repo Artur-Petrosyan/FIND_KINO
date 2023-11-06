@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { API_ENDPOINTS } from '../../constants/api';
 import { getShowInfo } from '../../redux/actions/asyncGetShowInfo';
-import { singleShowInfoSelector } from '../../redux/selectors/singleShowInfo';
 
 import '../../styles/singleShow.scss'
 import ShowEpisodes from '../ShowEpisodes/ShowEpisodes';
@@ -34,7 +33,7 @@ const SingleShowInfo = () => {
 
     return (
         <div>
-             {renderComponent(info)}
+            {renderComponent(info)}
         </div>
     );
 };
