@@ -8,6 +8,7 @@ import { singleShowInfoSelector } from '../../redux/selectors/singleShowInfo';
 import '../../styles/singleShow.scss'
 import ShowEpisodes from '../ShowEpisodes/ShowEpisodes';
 import ShowMain from '../ShowMain/ShowMain';
+import ShowSeasons from '../ShowSeasons/ShowSeasons';
 
 const SingleShowInfo = () => {
     const dispatch = useDispatch()
@@ -24,18 +25,7 @@ const SingleShowInfo = () => {
         <div>
             {info === 'episodes' && <ShowEpisodes />}
             {info === 'main' && <ShowMain />}
-            {info === 'seasons' &&
-                showInfo[info].map(({ id, image, number }) => <div key={id} style={{ display: 'flex' }}>
-                    <div>
-                        <img src={image?.medium} alt="" />
-                    </div>
-                    <div>
-                        <h1>
-                            Season {number}
-                        </h1>
-                    </div>
-                </div>)
-            }
+            {info === 'seasons' && <ShowSeasons />}
             {info === 'cast' &&
                 showInfo[info].map(({ person, character }) => <div key={person.id} style={{ display: 'flex' }}>
                     <div>
