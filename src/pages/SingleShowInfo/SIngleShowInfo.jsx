@@ -1,5 +1,3 @@
-import Card from '../../components/Card/Card';
-
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -9,8 +7,9 @@ import { singleShowInfoSelector } from '../../redux/selectors/singleShowInfo';
 
 import '../../styles/singleShow.scss'
 import ShowEpisodes from '../ShowEpisodes/ShowEpisodes';
+import ShowMain from '../ShowMain/ShowMain';
 
-const SingleShowInfo = ({ singleShow }) => {
+const SingleShowInfo = () => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
     const showInfo = useSelector(singleShowInfoSelector)
@@ -23,29 +22,8 @@ const SingleShowInfo = ({ singleShow }) => {
 
     return (
         <div>
-             {info === 'episodes' && <ShowEpisodes />}
-            {info === 'main' &&
-                singleShow.map(({ id, name, image, summary }) => (
-                    <div key={id} className='content'>
-                        <div className='signle-show__name'>
-                            <h1>{name}</h1>
-                        </div>
-                        <div className='single-show' >
-
-                            <div className='single-show__card'>
-                                <Card
-                                    key={id}
-                                    name={name}
-                                    image={image?.original}
-                                />
-                            </div>
-                            <div className='single-show__text'><p>
-                                {summary}
-                            </p></div>
-                        </div>
-                    </div>
-                ))
-            }
+            {info === 'episodes' && <ShowEpisodes />}
+            {info === 'main' && <ShowMain />}
             {info === 'seasons' &&
                 showInfo[info].map(({ id, image, number }) => <div key={id} style={{ display: 'flex' }}>
                     <div>
