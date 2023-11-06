@@ -10,4 +10,3 @@ export const getSingleShow = (enpoint, id) => async (dispatch) => {
         console.log(err);
     }
 }
-

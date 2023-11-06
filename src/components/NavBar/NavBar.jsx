@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useNavigation } from "../../hooks/useNavigation";
 import '../../styles/header.scss'
 const NavBar = ({ navList, subMenu }) => {
+
     const navigate = useNavigation()
+
     const [list, setList] = useState(navList)
+    
     const setActive = (id) => {
         let newList = []
         newList = list.map((item) => {

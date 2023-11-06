@@ -1,1 +1,1 @@
-export const singleShowInfoSelector = (state) => state.singleShowInfoEpisodes
+export const singleShowInfoSelector = (state) => state.showInfo
