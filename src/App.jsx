@@ -1,12 +1,14 @@
-import Header from "./components/Header/Header";
-import { Routes, Route } from 'react-router-dom'
-import '../src/styles/reset.scss'
-import '../src/styles/common.scss'
 import Home from "./pages/Home/Home";
+import Header from "./components/Header/Header";
 import Shows from "./pages/Shows/Shows";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SingleShow from "./pages/SingleShow/SingleShow";
 import SingleShowInfo from "./pages/SingleShowInfo/SIngleShowInfo";
+
+import { Routes, Route } from 'react-router-dom'
+
+import '../src/styles/common.scss'
+import '../src/styles/reset.scss'
 
 const App = () => {
   return (
@@ -18,7 +20,7 @@ const App = () => {
           <Route path='shows/:page' element={<Shows />} />
           <Route path='shows/:page/:id/:name' element={<SingleShow />} >
             <Route path=':info' element={<SingleShowInfo />} />
-          </Route>
+          </Route>     
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>

@@ -1,9 +1,10 @@
 import { useParams } from "react-router-dom";
 import '../../styles/table.scss'
 import { useSelector } from "react-redux";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 const Table = ({ showInfo }) => {
     const seasons = useSelector((state) => state.showInfo.seasons)
+    const [counter, setCounter] = useState(1)
     const { info } = useParams()
     const showInfoToSeasons = useMemo(() => {
         let showToSesons = [];
@@ -12,11 +13,13 @@ const Table = ({ showInfo }) => {
         })
         return showToSesons
     }, [info, seasons, showInfo])
-
+    
     return (
         showInfoToSeasons.map((item, index) => {
+
             return (
                 <table className="table" key={index}>
+                    <button onClick={() => setCounter(counter + 1)}>CLICK</button>
                     <thead className="table__thead">
                         <tr>
                             <th>Number</th>

@@ -1,7 +1,9 @@
-import '../../styles/header.scss'
 import Button from '../Button/Button';
-import { navList } from '../../constants/headerNavList';
 import NavBar from '../NavBar/NavBar';
+
+import { navList } from '../../constants/headerNavList';
+
+import '../../styles/header.scss'
 
 const Header = () => {
     return (

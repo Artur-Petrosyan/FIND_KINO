@@ -5,7 +5,7 @@ export const getShowInfo = (endpoint, id, info) => async (dispatch) => {
     console.log(info);
     try {
         const data = await createGetRequestShowInfo(endpoint, id, info)
-        dispatch({ type: GET_SHOW_INFO, data: data, info })
+        dispatch({ type: GET_SHOW_INFO, data: data ,info })
 
     }
     catch (err) {

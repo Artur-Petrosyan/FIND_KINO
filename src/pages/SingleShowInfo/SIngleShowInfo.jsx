@@ -1,20 +1,21 @@
+import Card from '../../components/Card/Card';
+import Table from '../../components/Table/Table';
+
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import '../../styles/singleShow.scss'
 import { useDispatch, useSelector } from 'react-redux';
 import { API_ENDPOINTS } from '../../constants/api';
-
 import { getShowInfo } from '../../redux/actions/asyncGetShowInfo';
-import Card from '../../components/Card/Card';
 import { singleShowInfoSelector } from '../../redux/selectors/singleShowInfo';
-import Table from '../../components/Table/Table';
+
+import '../../styles/singleShow.scss'
 
 const SingleShowInfo = ({ singleShow }) => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
 
     const showInfo = useSelector(singleShowInfoSelector)
-
+    const singleShowInfoSeasons = useSelector(state => state.singleShowInfoSeasons)
 
     useEffect(() => {
         if (info !== 'main') {
@@ -26,18 +27,9 @@ const SingleShowInfo = ({ singleShow }) => {
     return (
         <div>
             {info === 'episodes' &&
-                <Table showInfo={showInfo} />
-                // showInfo.map(({ id, name, image, summary, rating }) => (
-                //     <Card
-                //         key={id}
-                //         name={name}
-                //         image={image?.original}
-
-                //     />
-                // ))
+                <Table showInfo={showInfo} seasons={singleShowInfoSeasons} />
             }
-            {
-                info === 'main' &&
+            {info === 'main' &&
                 singleShow.map(({ id, name, image, summary }) => (
                     <div key={id} className='content'>
                         <div className='signle-show__name'>
@@ -58,7 +50,30 @@ const SingleShowInfo = ({ singleShow }) => {
                     </div>
                 ))
             }
-
+            {info === 'seasons' &&
+                showInfo[info].map(({ id, image, number }) => <div key={id} style={{ display: 'flex' }}>
+                    <div>
+                        <img src={image?.medium} alt="" />
+                    </div>
+                    <div>
+                        <h1>
+                            Season {number}
+                        </h1>
+                    </div>
+                </div>)
+            }
+            {info === 'cast' &&
+                showInfo[info].map(({ person, character }) => <div key={person.id} style={{ display: 'flex' }}>
+                    <div>
+                        <img src={person.image?.medium} alt="" />
+                    </div>
+                    <div>
+                        <h1 >
+                            {person.name} as {character.name}
+                        </h1>
+                    </div>
+                </div>)
+            }
         </div>
     );
 };
