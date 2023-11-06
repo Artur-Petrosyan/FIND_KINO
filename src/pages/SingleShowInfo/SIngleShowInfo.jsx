@@ -1,7 +1,6 @@
 import Card from '../../components/Card/Card';
-import Table from '../../components/Table/Table';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { API_ENDPOINTS } from '../../constants/api';
@@ -9,13 +8,12 @@ import { getShowInfo } from '../../redux/actions/asyncGetShowInfo';
 import { singleShowInfoSelector } from '../../redux/selectors/singleShowInfo';
 
 import '../../styles/singleShow.scss'
+import ShowEpisodes from '../ShowEpisodes/ShowEpisodes';
 
 const SingleShowInfo = ({ singleShow }) => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
     const showInfo = useSelector(singleShowInfoSelector)
-    const singleShowInfoSeasons = useSelector(state => state.singleShowInfoSeasons)
-
     useEffect(() => {
         if (info !== 'main') {
             dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
@@ -25,9 +23,7 @@ const SingleShowInfo = ({ singleShow }) => {
 
     return (
         <div>
-            {info === 'episodes' &&
-                <Table showInfo={showInfo} seasons={singleShowInfoSeasons} />
-            }
+             {info === 'episodes' && <ShowEpisodes />}
             {info === 'main' &&
                 singleShow.map(({ id, name, image, summary }) => (
                     <div key={id} className='content'>
