@@ -6,6 +6,8 @@ import Home from "./pages/Home/Home";
 import Shows from "./pages/Shows/Shows";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SingleShow from "./pages/SingleShow/SingleShow";
+import SingleShowInfo from "./pages/SingleShowInfo/SIngleShowInfo";
+
 const App = () => {
   return (
     <div className="App">
@@ -13,8 +15,10 @@ const App = () => {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path='/shows/:page' element={<Shows />} />
-          <Route path='/shows/:page/:id/:name' element={<SingleShow />} />
+          <Route path='shows/:page' element={<Shows />} />
+          <Route path='shows/:page/:id/:name' element={<SingleShow />} >
+            <Route path=':info' element={<SingleShowInfo />} />
+          </Route>
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
