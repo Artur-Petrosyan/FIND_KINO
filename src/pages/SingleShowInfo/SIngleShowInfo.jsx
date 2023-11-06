@@ -13,13 +13,15 @@ import Loader from '../../components/Loader/Loader';
 const SingleShowInfo = () => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
+        setIsLoading(true)
         if (info !== 'main') {
-
             dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
         }
+            setIsLoading(false)
     }, [id, info, dispatch])
-    const [isLoading, setIsLoading] = useState(true)
+
 
 
     const renderComponent = (info) => {
@@ -30,6 +32,7 @@ const SingleShowInfo = () => {
             case 'cast': return <ShowCast />;
             default: return <ShowMain />
         }
+
     }
 
 
