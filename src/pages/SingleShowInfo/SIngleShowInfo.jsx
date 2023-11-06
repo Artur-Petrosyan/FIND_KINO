@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { API_ENDPOINTS } from '../../constants/api';
@@ -19,12 +19,11 @@ const SingleShowInfo = () => {
         if (info !== 'main') {
             dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
         }
-            setIsLoading(false)
+        setIsLoading(false)
     }, [id, info, dispatch])
 
 
-
-    const renderComponent = (info) => {
+    const renderComponent = useMemo(() => {
         switch (info) {
             case 'main': return <ShowMain />;
             case 'episodes': return <ShowEpisodes />;
@@ -32,13 +31,12 @@ const SingleShowInfo = () => {
             case 'cast': return <ShowCast />;
             default: return <ShowMain />
         }
-
-    }
+    }, [info])
 
 
     return (
         <div>
-            {isLoading ? <Loader /> : renderComponent(info)}
+            {isLoading ? <Loader /> : renderComponent}
         </div>
     );
 };
