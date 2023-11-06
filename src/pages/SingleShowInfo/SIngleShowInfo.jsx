@@ -33,7 +33,6 @@ const SingleShowInfo = () => {
         }
     }, [info])
 
-
     return (
         <div>
             {isLoading ? <Loader /> : renderComponent}
