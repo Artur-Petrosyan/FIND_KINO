@@ -9,11 +9,11 @@ import '../../styles/singleShow.scss'
 import ShowEpisodes from '../ShowEpisodes/ShowEpisodes';
 import ShowMain from '../ShowMain/ShowMain';
 import ShowSeasons from '../ShowSeasons/ShowSeasons';
+import ShowCast from '../ShowCast/ShowCast';
 
 const SingleShowInfo = () => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
-    const showInfo = useSelector(singleShowInfoSelector)
     useEffect(() => {
         if (info !== 'main') {
             dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
@@ -21,23 +21,20 @@ const SingleShowInfo = () => {
     }, [id, info, dispatch])
 
 
+    const renderComponent = (info) => {
+        switch (info) {
+            case 'main': return <ShowMain />;
+            case 'episodes': return <ShowEpisodes />;
+            case 'seasons': return <ShowSeasons />;
+            case 'cast': return <ShowCast />;
+            default: return <ShowMain />
+        }
+    }
+
+
     return (
         <div>
-            {info === 'episodes' && <ShowEpisodes />}
-            {info === 'main' && <ShowMain />}
-            {info === 'seasons' && <ShowSeasons />}
-            {info === 'cast' &&
-                showInfo[info].map(({ person, character }) => <div key={person.id} style={{ display: 'flex' }}>
-                    <div>
-                        <img src={person.image?.medium} alt="" />
-                    </div>
-                    <div>
-                        <h1 >
-                            {person.name} as {character.name}
-                        </h1>
-                    </div>
-                </div>)
-            }
+             {renderComponent(info)}
         </div>
     );
 };
