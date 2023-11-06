@@ -31,24 +31,6 @@ const subMenuList = [
         active : false,
 
     },
-    {
-        id: v4(),
-        name: 'Characters',
-        active : false,
-
-    },
-    {
-        id: v4(),
-        name: 'Gallery',
-        active : false,
-
-    },
-    {
-        id: v4(),
-        name: 'News',
-        active : false,
-
-    }
 ]
 
 export default subMenuList

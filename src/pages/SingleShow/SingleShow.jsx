@@ -23,7 +23,7 @@ const SingleShow = () => {
     return (
         <div >
             <div className='nav__bar'>
-                <NavBar navList={subMenuList} subMenu={true}  navigateTo={navigateTo}/>
+                <NavBar navList={subMenuList} subMenu={true} navigateTo={navigateTo}/>
             </div>
             <div>
                 <SingleShowInfo singleShow={singleShow}  />

@@ -1,10 +1,10 @@
-import { GET_SHOW_INFO } from "../../constants/types";
+import { GET_SHOW_INFO_EPISODES } from "../../constants/types";
 
-const showInfoReducer = (state = [], { type, data }) => {
+const showInfoEpisodesReducer = (state = [], { type, data }) => {
     switch (type) {
-        case GET_SHOW_INFO: return data;
+        case GET_SHOW_INFO_EPISODES: return data;
         default: return state
     }
 }
 
-export default showInfoReducer;
+export default showInfoEpisodesReducer;
