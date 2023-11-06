@@ -1,23 +1,20 @@
-import { useParams } from "react-router-dom";
+import { memo, useEffect, useMemo } from 'react';
 import '../../styles/table.scss'
-import { useSelector } from "react-redux";
-import { useMemo } from "react";
-const Table = ({ showInfo }) => {
-    const seasons = useSelector((state) => state.showInfo.seasons)
-    const { info } = useParams()
-    const showInfoToSeasons = useMemo(() => {
-        let showToSesons = [];
-        showToSesons = seasons.map((season) => {
-            return showInfo[info].filter((item) => item.season === season.number)
-        })
-        return showToSesons
-    }, [info, seasons, showInfo])
+import groupBySeasons from "../../utils/filteredTheShowsSeason";
+import { useDispatch } from 'react-redux';
+import { setFiltredBySeason } from '../../redux/actions/setFIltredBySeason';
 
+const Table = memo(({ showInfo }) => {
+    const dispatch = useDispatch()
+    const showInfoToSeasons = useMemo(() => groupBySeasons(showInfo.episodes), [showInfo.episodes])
+    useEffect(() => {
+        dispatch(setFiltredBySeason(showInfoToSeasons))
+    }, [showInfoToSeasons,dispatch])
     return (
         showInfoToSeasons.map((item, index) => {
-
             return (
                 <table className="table" key={index}>
+
                     <thead className="table__thead">
                         <tr>
                             <th>Number</th>
@@ -41,6 +38,6 @@ const Table = ({ showInfo }) => {
         })
 
     );
-};
+});
 
 export default Table;

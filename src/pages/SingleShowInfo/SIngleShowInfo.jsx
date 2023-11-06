@@ -1,7 +1,7 @@
 import Card from '../../components/Card/Card';
 import Table from '../../components/Table/Table';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { API_ENDPOINTS } from '../../constants/api';
@@ -13,7 +13,6 @@ import '../../styles/singleShow.scss'
 const SingleShowInfo = ({ singleShow }) => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
-
     const showInfo = useSelector(singleShowInfoSelector)
     const singleShowInfoSeasons = useSelector(state => state.singleShowInfoSeasons)
 
@@ -36,6 +35,7 @@ const SingleShowInfo = ({ singleShow }) => {
                             <h1>{name}</h1>
                         </div>
                         <div className='single-show' >
+
                             <div className='single-show__card'>
                                 <Card
                                     key={id}
