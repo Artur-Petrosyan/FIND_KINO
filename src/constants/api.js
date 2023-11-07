@@ -4,4 +4,5 @@ export const API_ENDPOINTS = {
     SHOWS: 'shows',
     CATEGORIES: 'categories',
     USERS: "users",
+    PEOPLES: 'people',
 }
