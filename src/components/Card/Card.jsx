@@ -8,7 +8,7 @@ import '../../styles/card.scss'
 const Card = ({ id, name, image, navigateWithRegex, rating }) => {
     return (
         <div className="card">
-            <img src={image} alt={name} className="card__image" onClick={() => navigateWithRegex && navigateWithRegex(id, name)} />
+            {image && <img src={image} alt={name} className="card__image" onClick={() => navigateWithRegex && navigateWithRegex(id, name)} />}
             <div className="card__name">
                 <h3 onClick={() => navigateWithRegex && navigateWithRegex(id, name)}>{name}</h3>
             </div>
@@ -16,10 +16,10 @@ const Card = ({ id, name, image, navigateWithRegex, rating }) => {
                 <div className='card__footer-group-left'>
                     <img src={heart} alt="heart" className='card__footer-icon' />
                 </div>
-                <div className='card__footer-group-right'>
+                {rating && <div className='card__footer-group-right'>
                     <img src={star} alt="star" className='card__footer-icon' />
                     <p className='card__footer-rating'>{rating}</p>
-                </div>
+                </div>}
             </div>
         </div>
     );

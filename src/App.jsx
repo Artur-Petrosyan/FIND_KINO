@@ -9,6 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import '../src/styles/common.scss'
 import '../src/styles/reset.scss'
+import People from "./pages/People/People";
 
 const App = () => {
   return (
@@ -20,7 +21,9 @@ const App = () => {
           <Route path='shows/:page' element={<Shows />} />
           <Route path='shows/:page/:id/:name' element={<SingleShow />} >
             <Route path=':info' element={<SingleShowInfo />} />
-          </Route>     
+          </Route>
+          <Route path="people/:page" element={<People />} />
+
           <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>

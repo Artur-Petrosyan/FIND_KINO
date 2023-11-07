@@ -23,13 +23,13 @@ const Showes = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
-    const [pageNumber, setPageNumber] = useState(params.page)
+    const [pageNumber, setPageNumber] = useState(Number(params.page))
 
     const shows = useSelector(showsSelector)
 
 
     const sliced = useMemo(() => {
-        return sliceForPagination(shows, pageNumber)
+        return sliceForPagination(shows, Number(pageNumber))
     }, [pageNumber, shows])
 
 
@@ -61,7 +61,7 @@ const Showes = () => {
                     />
                 )}
             </div>
-            <Pagination shows={shows} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+            <Pagination data={shows} pageNumber={pageNumber} pageName='shows' setPageNumber={setPageNumber} />
         </div>
     );
 };
