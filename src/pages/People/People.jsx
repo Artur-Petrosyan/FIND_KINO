@@ -11,9 +11,7 @@ import Pagination from "../../components/Pagination/Pagination";
 
 const People = () => {
     const dispatch = useDispatch()
-    useEffect(() => {
-        dispatch(getPeoples(API_ENDPOINTS.PEOPLES))
-    }, [dispatch])
+
 
     const params = useParams()
     const navigate = useNavigate()
@@ -27,27 +25,29 @@ const People = () => {
         return sliceForPagination(peoples, pageNumber)
     }, [pageNumber, peoples])
 
+    useEffect(() => {
+        dispatch(getPeoples(API_ENDPOINTS.PEOPLES))
+    }, [dispatch])
 
- 
 
     useEffect(() => {
         dispatch(setPageAction(sliced))
     }, [dispatch, sliced])
     return (
         <div className='content'>
-        <div className='shows'>
-            {sliced.map(({ id, image, name, rating }) =>
-                <Card
-                    key={id}
-                    id={id}
-                    name={name}
-                    image={image?.original}
-                    rating={rating?.average}
-                />
-            )}
+            <div className='shows'>
+                {sliced.map(({ id, image, name, rating }) =>
+                    <Card
+                        key={id}
+                        id={id}
+                        name={name}
+                        image={image?.original}
+                        rating={rating?.average}
+                    />
+                )}
+            </div>
+            <Pagination data={peoples} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
         </div>
-        <Pagination data={peoples} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
-    </div>
     );
 };
 
