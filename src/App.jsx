@@ -10,7 +10,6 @@ import { Routes, Route } from 'react-router-dom'
 import '../src/styles/common.scss'
 import '../src/styles/reset.scss'
 import People from "./pages/People/People";
-import SinglePeople from "./pages/SinglePeople/SinglePeople";
 
 const App = () => {
   return (
@@ -23,9 +22,7 @@ const App = () => {
           <Route path='shows/:page/:id/:name' element={<SingleShow />} >
             <Route path=':info' element={<SingleShowInfo />} />
           </Route>
-          <Route path="people/:page" element={<People />} >
-            <Route path=":id/:name" element={<SinglePeople />} />
-          </Route>
+          <Route path="people/:page" element={<People />} />
 
           <Route path='*' element={<PageNotFound />} />
         </Routes>
