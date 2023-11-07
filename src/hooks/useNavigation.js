@@ -1,16 +1,16 @@
-import { useNavigate } from "react-router-dom"
-
 export const useNavigation = () => {
-    const navigate = useNavigate()
     const navigateTo = (path) => {
         const lowerPath = path.toLowerCase()
         if (lowerPath === 'home') {
-            return navigate('/')
+            return '/'
         }
         if (lowerPath === 'shows') {
-            return navigate('shows/1')
+            return 'shows/1'
         }
-        return navigate(lowerPath)
+        if(lowerPath === 'people'){
+            return 'people/1'
+        }
+        return lowerPath
     }
 
     return navigateTo;
