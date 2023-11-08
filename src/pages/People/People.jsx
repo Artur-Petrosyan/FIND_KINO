@@ -1,39 +1,13 @@
-import { useEffect, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getPeoples } from "../../redux/actions/asyncGetPeoples";
 import { API_ENDPOINTS } from "../../constants/api";
 import Card from "../../components/Card/Card";
-import { useNavigate, useParams } from "react-router-dom";
-import { peoplesSelector } from "../../redux/selectors/peoples";
-import sliceForPagination from "../../hooks/usePagination";
-import { setPageAction } from "../../redux/actions/setPage";
+
 import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader/Loader";
+import useSlicedData from "../../hooks/useSlicedData";
+import { GET_PEOPLES } from "../../constants/types";
 
 const People = () => {
-    const dispatch = useDispatch()
-
-    const [isLoading, setIsLoading] = useState(true)
-    const params = useParams()
-    const navigate = useNavigate()
-
-    const [pageNumber, setPageNumber] = useState(params.page)
-
-    const peoples = useSelector(peoplesSelector)
-
-
-    const sliced = useMemo(() => {
-        return sliceForPagination(peoples, pageNumber)
-    }, [pageNumber, peoples])
-
-    useEffect(() => {
-        dispatch(getPeoples(API_ENDPOINTS.PEOPLES, setIsLoading))
-    }, [dispatch])
-
-
-    useEffect(() => {
-        dispatch(setPageAction(sliced))
-    }, [dispatch, sliced])
+    const { setPageNumber, navigateWithRegex, sliced, data, pageNumber, isLoading } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES)
 
 
     return (
@@ -50,7 +24,7 @@ const People = () => {
                         />
                     )}
                 </div>
-                <Pagination data={peoples} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
+                <Pagination data={data} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
             </>}
         </div>
     );

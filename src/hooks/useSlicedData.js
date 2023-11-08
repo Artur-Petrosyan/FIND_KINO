@@ -11,15 +11,14 @@ const useSlicedData = (endpoint, nameForSelector, type) => {
     const params = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
-
+    const [isLoading, setIsloading] = useState(true)
     const [pageNumber, setPageNumber] = useState(Number(params.page))
 
     const data = useSelector((state) => dataSelector(state, nameForSelector))
 
-
     const sliced = useMemo(() => {
         return sliceForPagination(data, Number(pageNumber))
-    }, [data,pageNumber])
+    }, [data, pageNumber])
 
 
     const navigateWithRegex = (id, name) => {
@@ -29,7 +28,7 @@ const useSlicedData = (endpoint, nameForSelector, type) => {
 
 
     useEffect(() => {
-        dispatch(getData(endpoint, type))
+        dispatch(getData(endpoint, type, setIsloading))
     }, [dispatch, endpoint, type])
 
     useEffect(() => {
@@ -37,7 +36,7 @@ const useSlicedData = (endpoint, nameForSelector, type) => {
     }, [dispatch, sliced])
 
 
-    return { setPageNumber, navigateWithRegex, sliced, data, pageNumber }
+    return { setPageNumber, navigateWithRegex, sliced, data, pageNumber, isLoading }
 
 }
 
