@@ -11,7 +11,6 @@ import { GET_SHOWS } from '../../constants/types.js';
 
 const Showes = () => {
     const { setPageNumber, navigateWithRegex, sliced, data, pageNumber } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS)
-   console.log(sliced);
     return (
         <div className='content'>
             <div className='shows'>
