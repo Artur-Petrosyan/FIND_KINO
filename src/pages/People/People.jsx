@@ -8,11 +8,12 @@ import { peoplesSelector } from "../../redux/selectors/peoples";
 import sliceForPagination from "../../hooks/usePagination";
 import { setPageAction } from "../../redux/actions/setPage";
 import Pagination from "../../components/Pagination/Pagination";
+import Loader from "../../components/Loader/Loader";
 
 const People = () => {
     const dispatch = useDispatch()
 
-
+    const [isLoading, setIsLoading] = useState(true)
     const params = useParams()
     const navigate = useNavigate()
 
@@ -26,27 +27,31 @@ const People = () => {
     }, [pageNumber, peoples])
 
     useEffect(() => {
-        dispatch(getPeoples(API_ENDPOINTS.PEOPLES))
+        dispatch(getPeoples(API_ENDPOINTS.PEOPLES, setIsLoading))
     }, [dispatch])
 
 
     useEffect(() => {
         dispatch(setPageAction(sliced))
     }, [dispatch, sliced])
+
+
     return (
         <div className='content'>
-            <div className='shows'>
-                {sliced.map(({ id, image, name, rating }) =>
-                    <Card
-                        key={id}
-                        id={id}
-                        name={name}
-                        image={image?.original}
-                        rating={rating?.average}
-                    />
-                )}
-            </div>
-            <Pagination data={peoples} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
+            {isLoading ? <Loader /> : <>
+                <div className='shows'>
+                    {sliced.map(({ id, image, name, rating }) =>
+                        <Card
+                            key={id}
+                            id={id}
+                            name={name}
+                            image={image?.original}
+                            rating={rating?.average}
+                        />
+                    )}
+                </div>
+                <Pagination data={peoples} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
+            </>}
         </div>
     );
 };

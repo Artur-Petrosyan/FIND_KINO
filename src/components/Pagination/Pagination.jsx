@@ -44,7 +44,6 @@ const Pagination = memo(({ data, setPageNumber, pageNumber, pageName }) => {
             )}
             <div onClick={() => {
                 if (pageNumber < numOfPages.length) {
-                    console.log(pageNumber);
                     navigate(`/${pageName}/${Number(pageNumber + 1)}`);
                     setPageNumber(Number(pageNumber) + 1);
                 }

@@ -55,9 +55,9 @@ const Showes = () => {
                         key={id}
                         id={id}
                         name={name}
-                        image={image.original}
+                        image={image?.original}
                         navigateWithRegex={navigateWithRegex}
-                        rating={rating.average}
+                        rating={rating?.average}
                     />
                 )}
             </div>

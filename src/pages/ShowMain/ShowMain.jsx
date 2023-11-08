@@ -3,8 +3,7 @@ import { singleShowSelector } from "../../redux/selectors/singleShow";
 import Card from "../../components/Card/Card";
 
 const ShowMain = () => {
-    const singleShow = useSelector(singleShowSelector)
-
+    const singleShow = useSelector(singleShowSelector)  
     return (
         <div>
             {singleShow.map(({ id, name, image, summary }) => (
