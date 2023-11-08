@@ -1,52 +1,17 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 
-
-import { API_ENDPOINTS } from '../../constants/api';
-
-import { showsSelector } from '../../redux/selectors/shows';
-import { getShowes } from '../../redux/actions/asyncGetShowes';
-import { setPageAction } from '../../redux/actions/setPage.js';
-
-
-import sliceForPagination from '../../hooks/usePagination'
-import navigateToRegex from '../../utils/navigateToRegex.js';
 
 import Pagination from '../../components/Pagination/Pagination';
 import Card from '../../components/Card/Card.jsx';
 
 import '../../styles/shows.scss'
+import useSlicedData from '../../hooks/useSlicedData.js';
+import { API_ENDPOINTS } from '../../constants/api.js';
+import { GET_SHOWS } from '../../constants/types.js';
 
 const Showes = () => {
-    const params = useParams()
-    const dispatch = useDispatch()
-    const navigate = useNavigate()
-
-    const [pageNumber, setPageNumber] = useState(Number(params.page))
-
-    const shows = useSelector(showsSelector)
-
-
-    const sliced = useMemo(() => {
-        return sliceForPagination(shows, Number(pageNumber))
-    }, [pageNumber, shows])
-
-
-    const navigateWithRegex = (id, name) => {
-        const newName = navigateToRegex(name)
-        return navigate(`${id}/${newName}/main`)
-    }
-
-
-    useEffect(() => {
-        dispatch(getShowes(API_ENDPOINTS.SHOWS))
-    }, [dispatch])
-
-    useEffect(() => {
-        dispatch(setPageAction(sliced))
-    }, [dispatch, sliced])
-    
+    const { setPageNumber, navigateWithRegex, sliced, data, pageNumber } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS)
+   console.log(sliced);
     return (
         <div className='content'>
             <div className='shows'>
@@ -61,7 +26,7 @@ const Showes = () => {
                     />
                 )}
             </div>
-            <Pagination data={shows} pageNumber={pageNumber} pageName='shows' setPageNumber={setPageNumber} />
+            <Pagination data={data} pageNumber={pageNumber} pageName='shows' setPageNumber={setPageNumber} />
         </div>
     );
 };

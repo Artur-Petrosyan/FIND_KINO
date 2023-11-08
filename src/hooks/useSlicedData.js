@@ -1,26 +1,25 @@
 import { useEffect, useMemo, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useNavigate, useParams } from "react-router-dom"
-import { showsSelector } from "../redux/selectors/shows"
+import { dataSelector } from "../redux/selectors/shows"
 import sliceForPagination from "./usePagination"
 import navigateToRegex from "../utils/navigateToRegex"
-import { API_ENDPOINTS } from "../constants/api"
-import { getShowes } from "../redux/actions/asyncGetShowes"
 import { setPageAction } from "../redux/actions/setPage"
+import { getData } from "../redux/actions/asyncGetData"
 
-const useSlicedData = () => {
+const useSlicedData = (endpoint, nameForSelector, type) => {
     const params = useParams()
     const dispatch = useDispatch()
     const navigate = useNavigate()
 
     const [pageNumber, setPageNumber] = useState(Number(params.page))
 
-    const shows = useSelector(showsSelector)
+    const data = useSelector((state) => dataSelector(state, nameForSelector))
 
 
     const sliced = useMemo(() => {
-        return sliceForPagination(shows, Number(pageNumber))
-    }, [pageNumber, shows])
+        return sliceForPagination(data, Number(pageNumber))
+    }, [data,pageNumber])
 
 
     const navigateWithRegex = (id, name) => {
@@ -30,15 +29,15 @@ const useSlicedData = () => {
 
 
     useEffect(() => {
-        dispatch(getShowes(API_ENDPOINTS.SHOWS))
-    }, [dispatch])
+        dispatch(getData(endpoint, type))
+    }, [dispatch, endpoint, type])
 
     useEffect(() => {
         dispatch(setPageAction(sliced))
     }, [dispatch, sliced])
 
 
-    return { setPageNumber, navigateWithRegex, sliced }
+    return { setPageNumber, navigateWithRegex, sliced, data, pageNumber }
 
 }
 

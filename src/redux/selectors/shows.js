@@ -1,1 +1,1 @@
-export const dataSelector = (state,name) => state.name
+export const dataSelector = (state,name) => state[name]
