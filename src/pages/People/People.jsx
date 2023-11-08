@@ -6,17 +6,17 @@ import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader/Loader";
 
 import useSlicedData from "../../hooks/useSlicedData";
+import { useParams } from "react-router-dom";
 
 const People = () => {
+    const { page } = useParams()
     const {
         setPageNumber,
         navigateWithRegex,
         sliced,
         data,
-        pageNumber,
         isLoading
-    } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES)
-
+    } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES, page)
 
     return (
         <div className='content'>
@@ -32,7 +32,7 @@ const People = () => {
                         />
                     )}
                 </div>
-                <Pagination data={data} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
+                <Pagination data={data} pageNumber={page} pageName='people' setPageNumber={setPageNumber} />
             </>}
         </div>
     );

@@ -10,8 +10,10 @@ import Loader from '../../components/Loader/Loader.jsx';
 import useSlicedData from '../../hooks/useSlicedData.js';
 
 import '../../styles/shows.scss'
+import { useParams } from 'react-router-dom';
 
 const Showes = () => {
+    const { page } = useParams()
     const {
         setPageNumber,
         navigateWithRegex,
@@ -19,7 +21,9 @@ const Showes = () => {
         data,
         pageNumber,
         isLoading
-    } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS)
+    } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS,page)
+
+
     return (
         <div className='content'>
             {isLoading ? <Loader /> :

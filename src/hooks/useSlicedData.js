@@ -1,24 +1,23 @@
 import { useEffect, useMemo, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { dataSelector } from "../redux/selectors/shows"
 import sliceForPagination from "./usePagination"
 import navigateToRegex from "../utils/navigateToRegex"
 import { setPageAction } from "../redux/actions/setPage"
 import { getData } from "../redux/actions/asyncGetData"
 
-const useSlicedData = (endpoint, nameForSelector, type) => {
-    const params = useParams()
+const useSlicedData = (endpoint, nameForSelector, type, page) => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const [isLoading, setIsloading] = useState(true)
-    const [pageNumber, setPageNumber] = useState(Number(params.page))
+    const [pageNumber, setPageNumber] = useState(Number(page))
 
     const data = useSelector((state) => dataSelector(state, nameForSelector))
 
     const sliced = useMemo(() => {
-        return sliceForPagination(data, Number(pageNumber))
-    }, [data, pageNumber])
+        return sliceForPagination(data, Number(page))
+    }, [data, page])
 
 
     const navigateWithRegex = (id, name) => {
@@ -36,7 +35,7 @@ const useSlicedData = (endpoint, nameForSelector, type) => {
     }, [dispatch, sliced])
 
 
-    return { setPageNumber, navigateWithRegex, sliced, data, pageNumber, isLoading }
+    return { setPageNumber, navigateWithRegex, sliced, data, isLoading }
 
 }
 
