@@ -1,17 +1,25 @@
 import React from 'react';
 
+import { GET_SHOWS } from '../../constants/types.js';
+import { API_ENDPOINTS } from '../../constants/api.js';
 
 import Pagination from '../../components/Pagination/Pagination';
 import Card from '../../components/Card/Card.jsx';
-
-import '../../styles/shows.scss'
-import useSlicedData from '../../hooks/useSlicedData.js';
-import { API_ENDPOINTS } from '../../constants/api.js';
-import { GET_SHOWS } from '../../constants/types.js';
 import Loader from '../../components/Loader/Loader.jsx';
 
+import useSlicedData from '../../hooks/useSlicedData.js';
+
+import '../../styles/shows.scss'
+
 const Showes = () => {
-    const { setPageNumber, navigateWithRegex, sliced, data, pageNumber, isLoading } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS)
+    const {
+        setPageNumber,
+        navigateWithRegex,
+        sliced,
+        data,
+        pageNumber,
+        isLoading
+    } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS)
     return (
         <div className='content'>
             {isLoading ? <Loader /> :

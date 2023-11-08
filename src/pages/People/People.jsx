@@ -1,13 +1,21 @@
 import { API_ENDPOINTS } from "../../constants/api";
-import Card from "../../components/Card/Card";
-
-import Pagination from "../../components/Pagination/Pagination";
-import Loader from "../../components/Loader/Loader";
-import useSlicedData from "../../hooks/useSlicedData";
 import { GET_PEOPLES } from "../../constants/types";
 
+import Card from "../../components/Card/Card";
+import Pagination from "../../components/Pagination/Pagination";
+import Loader from "../../components/Loader/Loader";
+
+import useSlicedData from "../../hooks/useSlicedData";
+
 const People = () => {
-    const { setPageNumber, navigateWithRegex, sliced, data, pageNumber, isLoading } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES)
+    const {
+        setPageNumber,
+        navigateWithRegex,
+        sliced,
+        data,
+        pageNumber,
+        isLoading
+    } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES)
 
 
     return (
