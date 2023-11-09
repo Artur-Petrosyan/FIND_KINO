@@ -1,52 +1,39 @@
-import { useEffect, useMemo, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getPeoples } from "../../redux/actions/asyncGetPeoples";
 import { API_ENDPOINTS } from "../../constants/api";
+import { GET_PEOPLES } from "../../constants/types";
+
 import Card from "../../components/Card/Card";
-import { useNavigate, useParams } from "react-router-dom";
-import { peoplesSelector } from "../../redux/selectors/peoples";
-import sliceForPagination from "../../hooks/usePagination";
-import { setPageAction } from "../../redux/actions/setPage";
 import Pagination from "../../components/Pagination/Pagination";
+import Loader from "../../components/Loader/Loader";
+
+import useSlicedData from "../../hooks/useSlicedData";
+import { useParams } from "react-router-dom";
 
 const People = () => {
-    const dispatch = useDispatch()
+    const { page } = useParams()
+    const {
+        setPageNumber,
+        navigateWithRegex,
+        sliced,
+        data,
+        isLoading
+    } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES, page)
 
-
-    const params = useParams()
-    const navigate = useNavigate()
-
-    const [pageNumber, setPageNumber] = useState(params.page)
-
-    const peoples = useSelector(peoplesSelector)
-
-
-    const sliced = useMemo(() => {
-        return sliceForPagination(peoples, pageNumber)
-    }, [pageNumber, peoples])
-
-    useEffect(() => {
-        dispatch(getPeoples(API_ENDPOINTS.PEOPLES))
-    }, [dispatch])
-
-
-    useEffect(() => {
-        dispatch(setPageAction(sliced))
-    }, [dispatch, sliced])
     return (
         <div className='content'>
-            <div className='shows'>
-                {sliced.map(({ id, image, name, rating }) =>
-                    <Card
-                        key={id}
-                        id={id}
-                        name={name}
-                        image={image?.original}
-                        rating={rating?.average}
-                    />
-                )}
-            </div>
-            <Pagination data={peoples} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
+            {isLoading ? <Loader /> : <>
+                <div className='shows'>
+                    {sliced.map(({ id, image, name, rating }) =>
+                        <Card
+                            key={id}
+                            id={id}
+                            name={name}
+                            image={image?.original}
+                            rating={rating?.average}
+                        />
+                    )}
+                </div>
+                <Pagination data={data} pageNumber={page} pageName='people' setPageNumber={setPageNumber} />
+            </>}
         </div>
     );
 };
