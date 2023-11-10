@@ -18,6 +18,7 @@ const _Pagination = memo(({ data, setPageNumber, pageNumber, pageName }) => {
             defaultCurrent={1}
             pageSize={40}
             size="large"
+            className="pagination"
             total={data.length}
             showQuickJumper={true}
             onChange={(num) => {
