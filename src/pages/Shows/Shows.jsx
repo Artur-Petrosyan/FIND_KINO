@@ -40,6 +40,7 @@ const Showes = () => {
                             />
                         )}
                     </div>
+              
                     <Pagination data={data} pageNumber={pageNumber} pageName='shows' setPageNumber={setPageNumber} />
                 </>
             }

@@ -7,16 +7,19 @@ const ShowCast = () => {
     const { info } = useParams()
     return (
         <div>
-            {showInfo[info].map(({ person, character }) => <div key={person.id} style={{ display: 'flex' }}>
-                <div>
-                    <img src={person.image?.medium} alt="" />
+            {showInfo[info].map(({ person, character }) => (
+                <div key={character.id} style={{ display: 'flex' }}>
+                    <div>
+                        <img src={person.image?.medium} alt="" />
+                    </div>
+                    <div>
+                        <h1 >
+                            {person.name} as {character.name}
+                        </h1>
+                    </div>
                 </div>
-                <div>
-                    <h1 >
-                        {person.name} as {character.name}
-                    </h1>
-                </div>
-            </div>)}
+            )
+            )}
         </div>
     );
 };

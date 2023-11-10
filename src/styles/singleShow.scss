@@ -1,12 +1,15 @@
 .single-show {
     display: flex;
-        & .single-show__card{
-        min-width: 10%;
+
+    & .single-show__card {
+        width: 20%;
         margin-right: 100px;
+
         & * {
             width: 100%;
         }
     }
+
     & .single-show__text {
         width: 20%;
     }

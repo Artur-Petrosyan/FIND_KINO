@@ -15,11 +15,11 @@ const SingleShowInfo = () => {
     const { id, info } = useParams()
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
-        setIsLoading(true)
         if (info !== 'main') {
-            dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info))
+            dispatch(getShowInfo(API_ENDPOINTS.SHOWS, id, info, setIsLoading))
         }
         setIsLoading(false)
+
     }, [id, info, dispatch])
 
 

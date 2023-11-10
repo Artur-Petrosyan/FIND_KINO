@@ -35,7 +35,7 @@ const useSlicedData = (endpoint, nameForSelector, type, page) => {
     }, [dispatch, sliced])
 
 
-    return { setPageNumber, navigateWithRegex, sliced, data, isLoading }
+    return { setPageNumber, navigateWithRegex, sliced, data, isLoading, pageNumber }
 
 }
 
