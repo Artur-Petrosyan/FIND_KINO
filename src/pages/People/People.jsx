@@ -14,6 +14,7 @@ const People = () => {
         navigateWithRegex,
         sliced,
         data,
+        pageNumber,
         isLoading
     } = useSlicedData(API_ENDPOINTS.PEOPLES, 'peoples', GET_PEOPLES, page)
 
@@ -31,7 +32,7 @@ const People = () => {
                         />
                     )}
                 </div>
-                <Pagination data={data} pageNumber={page} pageName='people' setPageNumber={setPageNumber} />
+                <Pagination data={data} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
             </>}
         </div>
     );
