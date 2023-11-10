@@ -15,6 +15,8 @@ const Pagination = memo(({ data, setPageNumber, pageNumber, pageName }) => {
     for (let i = 1; i <= pages; i++) {
         numOfPages.push(i)
     }
+
+        
     return (
         <div className='pagination' >
             <div onClick={() => {
