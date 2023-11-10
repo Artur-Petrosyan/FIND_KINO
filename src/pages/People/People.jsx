@@ -1,6 +1,5 @@
 import { API_ENDPOINTS } from "../../constants/api";
 import { GET_PEOPLES } from "../../constants/types";
-
 import Card from "../../components/Card/Card";
 import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader/Loader";
