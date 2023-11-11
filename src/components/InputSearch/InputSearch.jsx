@@ -7,6 +7,8 @@ const { Search } = Input
 const InputSearch = () => {
 
     const [searchQuery, setSearchQuery] = useState('')
+
+
     return (
         <div className='header__search'>
             <Search
