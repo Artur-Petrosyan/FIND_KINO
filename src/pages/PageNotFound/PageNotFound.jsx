@@ -8,7 +8,7 @@ const PageNotFound = () => {
         status="404"
         title="404"
         subTitle="Sorry, the page you visited does not exist."
-        extra={<Button onClick={() => navigate('/')} type="primary">Back Home</Button>}
+        extra={<Button className="ant_btn" onClick={() => navigate('/')} type="primary">Back Home</Button>}
       />
     );
 };
