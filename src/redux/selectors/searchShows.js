@@ -1,0 +1,1 @@
+export const searchShowsSelector = (state) => state.searchShows

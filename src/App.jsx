@@ -10,6 +10,7 @@ import { Routes, Route } from 'react-router-dom'
 import '../src/styles/common.scss'
 import '../src/styles/reset.scss'
 import People from "./pages/People/People";
+import SearchPage from "./pages/SearchPage/SearchPage";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path='search' element={<SearchPage />} />
           <Route path='shows/:page' element={<Shows />} />
           <Route path='shows/:page/:id/:name' element={<SingleShow />} >
             <Route path=':info' element={<SingleShowInfo />} />
@@ -25,6 +27,7 @@ const App = () => {
           <Route path="people/:page" element={<People />} />
 
           <Route path='*' element={<PageNotFound />} />
+
         </Routes>
       </div>
     </div>
