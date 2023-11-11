@@ -1,4 +1,3 @@
-import { createGetRequestSearch } from '../../api/http-api'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Input } from 'antd'
