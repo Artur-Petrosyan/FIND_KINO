@@ -11,6 +11,7 @@ import useSlicedData from '../../hooks/useSlicedData.js';
 
 import '../../styles/shows.scss'
 import { useParams } from 'react-router-dom';
+import { Row, Col } from 'antd'
 
 const Showes = () => {
     const { page } = useParams()
@@ -21,26 +22,28 @@ const Showes = () => {
         data,
         pageNumber,
         isLoading
-    } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS,page)
+    } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS, page)
 
 
     return (
         <div className='content'>
             {isLoading ? <Loader /> :
                 <>
-                    <div className='shows'>
+                    <Row gutter={20} wrap={true}>
                         {sliced.map(({ id, image, name, rating }) =>
-                            <Card
-                                key={id}
-                                id={id}
-                                name={name}
-                                image={image?.original}
-                                navigateWithRegex={navigateWithRegex}
-                                rating={rating?.average}
-                            />
+                            <Col key={id} xl={3} lg={6} md={8} sm={12} xs={24} span={3} className='row__col'>
+                                <Card
+                                    key={id}
+                                    id={id}
+                                    name={name}
+                                    navigateWithRegex={navigateWithRegex}
+                                    image={image?.original}
+                                    rating={rating?.average}
+                                />
+                            </Col>
                         )}
-                    </div>
-              
+                    </Row>
+
                     <Pagination data={data} pageNumber={pageNumber} pageName='shows' setPageNumber={setPageNumber} />
                 </>
             }
