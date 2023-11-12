@@ -3,15 +3,13 @@ import { GET_PEOPLES } from "../../constants/types";
 import Card from "../../components/Card/Card";
 import Pagination from "../../components/Pagination/Pagination";
 import Loader from "../../components/Loader/Loader";
-
+import { Row, Col } from 'antd'
 import useSlicedData from "../../hooks/useSlicedData";
 import { useParams } from "react-router-dom";
-
 const People = () => {
     const { page } = useParams()
     const {
         setPageNumber,
-        navigateWithRegex,
         sliced,
         data,
         pageNumber,
@@ -21,17 +19,19 @@ const People = () => {
     return (
         <div className='content'>
             {isLoading ? <Loader /> : <>
-                <div className='shows'>
+                <Row gutter={20} wrap={true}>
                     {sliced.map(({ id, image, name, rating }) =>
-                        <Card
-                            key={id}
-                            id={id}
-                            name={name}
-                            image={image?.original}
-                            rating={rating?.average}
-                        />
+                        <Col key={id} xl={3} lg={6} md={8} sm={12} xs={24} span={3} className='row__col'>
+                            <Card
+                                key={id}
+                                id={id}
+                                name={name}
+                                image={image?.original}
+                                rating={rating?.average}
+                            />
+                        </Col>
                     )}
-                </div>
+                </Row>
                 <Pagination data={data} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber} />
             </>}
         </div>
