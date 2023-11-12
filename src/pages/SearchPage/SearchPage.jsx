@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { searchShowsSelector } from '../../redux/selectors/searchShows';
 import getSearchShows from '../../redux/actions/asyncGetSearchShows';
 import Card from '../../components/Card/Card';
-import { Row, Col } from 'antd';
+import { Row, Col, Result, Button } from 'antd';
 import '../../styles/searchPage.scss'
 import Loader from '../../components/Loader/Loader';
 
@@ -13,6 +13,7 @@ const SearchPage = () => {
     const search = new URLSearchParams(location.search)
     const query = search.get('q')
     const [isLoading, setIsLoading] = useState(true)
+    const navigate = useNavigate()
     const dispatch = useDispatch()
     const searchShows = useSelector(searchShowsSelector)
     useEffect(() => {
@@ -20,13 +21,22 @@ const SearchPage = () => {
     }, [query, dispatch])
     return (
         <div>
-            {searchShows ?
-                <Row gutter={20} wrap={true}>
+            {searchShows.length ?
+                <Row className='' gutter={20} wrap={true}>
                     {isLoading ? <Loader /> :
                         searchShows.map(({ show }) => {
                             const { id, name, image, rating } = show
                             return (
-                                <Col key={id} xl={3} lg={6} md={8} sm={12} xs={24} span={3} className='row__col'>
+                                <Col
+                                    key={id}
+                                    xl={3}
+                                    lg={6}
+                                    md={8}
+                                    sm={12}
+                                    xs={24}
+                                    span={3}
+                                    className='row__col'
+                                >
                                     <Card
                                         key={id}
                                         id={id}
@@ -37,11 +47,15 @@ const SearchPage = () => {
                                 </Col>
                             )
                         }
-                        )
 
+                        )
                     }
                 </Row>
-                : <p>Not Items</p>}
+                : <Result
+                    subTitle="Sorry, show not found,please click on button 'Shows' for watching all shows."
+                    extra={<Button className="ant_btn" onClick={() => navigate('/shows/1')} type="primary">Shows</Button>}
+                />
+            }
         </div>
     );
 };
