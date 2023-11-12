@@ -10,7 +10,6 @@ const People = () => {
     const { page } = useParams()
     const {
         setPageNumber,
-        navigateWithRegex,
         sliced,
         data,
         pageNumber,

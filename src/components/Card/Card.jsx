@@ -3,14 +3,17 @@ import Card from 'antd/es/card/Card';
 import '../../styles/card.scss'
 import Meta from 'antd/es/card/Meta';
 import { HeartOutlined, StarOutlined } from '@ant-design/icons'
-const _Card = ({ id, name, image, navigateWithRegex, rating }) => {
+import { useNavigate } from 'react-router-dom';
+import { navigateWithRegex } from '../../utils/navigateWithRegex';
+const _Card = ({ id, name, image, rating }) => {
+    const navigate = useNavigate()
     return (
         <Card
             className='card'
             key={id}
             title={name}
             cover={image ? <img src={image} alt='img' className='card__image' /> : <span>Not image</span>}
-            onClick={() => navigateWithRegex && navigateWithRegex(id, name)}
+            onClick={() => navigateWithRegex && navigateWithRegex(id, name,navigate)}
             size='small'
         >
             <Meta title={name} />

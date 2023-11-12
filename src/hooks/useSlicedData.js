@@ -9,7 +9,6 @@ import { getData } from "../redux/actions/asyncGetData"
 
 const useSlicedData = (endpoint, nameForSelector, type, page) => {
     const dispatch = useDispatch()
-    const navigate = useNavigate()
     const [isLoading, setIsloading] = useState(true)
     const [pageNumber, setPageNumber] = useState(Number(page))
 
@@ -18,13 +17,6 @@ const useSlicedData = (endpoint, nameForSelector, type, page) => {
     const sliced = useMemo(() => {
         return sliceForPagination(data, Number(page))
     }, [data, page])
-
-
-    const navigateWithRegex = (id, name) => {
-        const newName = navigateToRegex(name)
-        return navigate(`${id}/${newName}/main`)
-    }
-
 
     useEffect(() => {
         dispatch(getData(endpoint, type, setIsloading))
@@ -35,7 +27,7 @@ const useSlicedData = (endpoint, nameForSelector, type, page) => {
     }, [dispatch, sliced])
 
 
-    return { setPageNumber, navigateWithRegex, sliced, data, isLoading, pageNumber }
+    return { setPageNumber, sliced, data, isLoading, pageNumber }
 
 }
 

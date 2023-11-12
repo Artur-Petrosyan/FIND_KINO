@@ -17,7 +17,6 @@ const Showes = () => {
     const { page } = useParams()
     const {
         setPageNumber,
-        navigateWithRegex,
         sliced,
         data,
         pageNumber,
@@ -36,7 +35,6 @@ const Showes = () => {
                                     key={id}
                                     id={id}
                                     name={name}
-                                    navigateWithRegex={navigateWithRegex}
                                     image={image?.original}
                                     rating={rating?.average}
                                 />
