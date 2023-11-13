@@ -10,7 +10,7 @@ import { Routes, Route } from 'react-router-dom'
 import '../src/styles/common.scss'
 import '../src/styles/reset.scss'
 import People from "./pages/People/People";
-import SearchPage from "./pages/SearchPage/SearchPage";
+import SearchPage from "./pages/SearchPage/ui/SearchPage";
 
 const App = () => {
   return (
