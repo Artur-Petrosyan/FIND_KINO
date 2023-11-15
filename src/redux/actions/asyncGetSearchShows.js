@@ -1,5 +1,5 @@
-import { createGetRequestSearch } from "../../api/http-api";
-import { GET_SEARCH_SHOWS } from "../../constants/types";
+import { createGetRequestSearch } from "src/api/http-api";
+import { GET_SEARCH_SHOWS } from "src/constants/types";
 
 const getSearchShows = (query, setIsLoading) => async (dispatch) => {
     try {

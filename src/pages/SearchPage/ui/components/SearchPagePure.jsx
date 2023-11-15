@@ -1,8 +1,8 @@
 import React from "react";
 import {Button, Col, Result, Row} from "antd";
 
-import Loader from "../../../../components/Loader/Loader";
-import Card from "../../../../components/Card/Card";
+import Loader from "src/components//Loader/Loader";
+import Card from "src/components//Card/Card";
 // import {Card} from "src/core";
 
 import './SearchPagePure.scss'

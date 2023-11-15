@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constants/api"
+import { BASE_URL } from "src/constants/api"
 
 export const fetchGet = async (endpoint) => {
     try {

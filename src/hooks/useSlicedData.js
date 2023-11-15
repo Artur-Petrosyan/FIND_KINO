@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { dataSelector } from "../redux/selectors/shows"
-import { setPageAction } from "../redux/actions/setPage"
-import { getData } from "../redux/actions/asyncGetData"
-import {sliceForPagination} from "../core/lib/sliceForPagination";
+import { dataSelector } from "src/redux/selectors/shows"
+import { setPageAction } from "src/redux/actions/setPage"
+import { getData } from "src/redux/actions/asyncGetData"
+import {sliceForPagination} from "src/core/lib/sliceForPagination";
 
 const useSlicedData = (endpoint, nameForSelector, type, page) => {
     const dispatch = useDispatch()

@@ -1,7 +1,7 @@
 import { memo } from "react";
 import { useNavigate } from "react-router-dom";
 import { Pagination } from "antd";
-import '../../styles/pagination.scss'
+import 'src/styles/pagination.scss'
 
 const _Pagination = memo(({ data, setPageNumber, pageNumber, pageName }) => {
     const navigate = useNavigate()

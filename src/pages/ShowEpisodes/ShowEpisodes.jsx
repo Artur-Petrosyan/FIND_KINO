@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import Table from "../../components/Table/Table";
-import { singleShowInfoSelector } from "../../redux/selectors/singleShowInfo";
+import Table from "src/components//Table/Table";
+import { singleShowInfoSelector } from "src/redux/selectors/singleShowInfo";
 
 const ShowEpisodes = () => {
     const showInfo = useSelector(singleShowInfoSelector)

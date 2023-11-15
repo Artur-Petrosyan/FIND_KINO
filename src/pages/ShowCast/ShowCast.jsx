@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { singleShowInfoSelector } from "../../redux/selectors/singleShowInfo";
+import { singleShowInfoSelector } from "src/redux/selectors/singleShowInfo";
 import { useParams } from "react-router-dom";
 
 const ShowCast = () => {

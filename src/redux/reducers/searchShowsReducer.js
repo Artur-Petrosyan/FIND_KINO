@@ -1,4 +1,4 @@
-import { GET_SEARCH_SHOWS } from "../../constants/types";
+import { GET_SEARCH_SHOWS } from "src/constants/types";
 
 const searchShowReducer = (state = [], {type ,data}) => {
 switch(type) {

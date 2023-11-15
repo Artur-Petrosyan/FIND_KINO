@@ -1,5 +1,5 @@
-import { createGetRequestForSingleShow } from "../../api/http-api"
-import { SET_SINGLE_SHOW } from "../../constants/types"
+import { createGetRequestForSingleShow } from "src/api/http-api"
+import { SET_SINGLE_SHOW } from "src/constants/types"
 
 export const getSingleShow = (enpoint, id,setIsloading) => async (dispatch) => {
     try {

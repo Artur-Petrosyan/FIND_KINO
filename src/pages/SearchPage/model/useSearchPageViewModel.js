@@ -1,8 +1,8 @@
 import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {searchShowsSelector} from "../../../redux/selectors/searchShows";
-import getSearchShows from "../../../redux/actions/asyncGetSearchShows";
+import {searchShowsSelector} from "src/redux/selectors/searchShows";
+import getSearchShows from "src/redux/actions/asyncGetSearchShows";
 
 export function useSearchPageViewModel() {
     const location = useLocation()

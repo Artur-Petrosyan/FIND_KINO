@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { API_ENDPOINTS } from '../../constants/api';
-import { getShowInfo } from '../../redux/actions/asyncGetShowInfo';
+import { API_ENDPOINTS } from 'src/constants/api';
+import { getShowInfo } from 'src/redux/actions/asyncGetShowInfo';
 
-import '../../styles/singleShow.scss'
-import ShowEpisodes from '../ShowEpisodes/ShowEpisodes';
-import ShowMain from '../ShowMain/ShowMain';
-import ShowSeasons from '../ShowSeasons/ShowSeasons';
-import ShowCast from '../ShowCast/ShowCast';
-import Loader from '../../components/Loader/Loader';
+import 'src/styles/singleShow.scss'
+import ShowEpisodes from 'src/pages/ShowEpisodes/ShowEpisodes';
+import ShowMain from 'src/pages/ShowMain/ShowMain';
+import ShowSeasons from 'src/pages/ShowSeasons/ShowSeasons';
+import ShowCast from 'src/pages/ShowCast/ShowCast';
+import Loader from 'src/components//Loader/Loader';
 const SingleShowInfo = () => {
     const dispatch = useDispatch()
     const { id, info } = useParams()

@@ -1,10 +1,10 @@
-import Button from '../Button/Button';
-import NavBar from '../NavBar/NavBar';
+import Button from 'src/components/Button/Button';
+import NavBar from 'src/components/NavBar/NavBar';
 
-import { navList } from '../../constants/headerNavList';
+import { navList } from 'src/constants/headerNavList';
 
-import '../../styles/header.scss'
-import InputSearch from '../InputSearch/InputSearch';
+import 'src/styles/header.scss'
+import InputSearch from 'src/components/InputSearch/InputSearch';
 
 const Header = () => {
     return (

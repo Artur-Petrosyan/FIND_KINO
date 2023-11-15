@@ -1,5 +1,5 @@
-import { createGetRequest } from "../../api/http-api"
-import { GET_PEOPLES } from "../../constants/types"
+import { createGetRequest } from "src/api/http-api"
+import { GET_PEOPLES } from "src/constants/types"
 
 export const getPeoples = (endpoint, setIsLoading) => async (dispatch) => {
     const data = await createGetRequest(endpoint)

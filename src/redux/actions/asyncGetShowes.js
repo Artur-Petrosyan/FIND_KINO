@@ -1,5 +1,5 @@
-import { createGetRequest } from "../../api/http-api"
-import { GET_SHOWS } from "../../constants/types"
+import { createGetRequest } from "src/api/http-api"
+import { GET_SHOWS } from "src/constants/types"
 
 export const getShowes = (endpoint,type) => async (dispatch) => {
     try {

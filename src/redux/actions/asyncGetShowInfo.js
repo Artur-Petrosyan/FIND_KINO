@@ -1,5 +1,5 @@
-import { createGetRequestShowInfo } from "../../api/http-api";
-import { GET_SHOW_INFO } from "../../constants/types"
+import { createGetRequestShowInfo } from "src/api/http-api";
+import { GET_SHOW_INFO } from "src/constants/types"
 
 export const getShowInfo = (endpoint, id, info,setIsLoading) => async (dispatch) => {
     try {

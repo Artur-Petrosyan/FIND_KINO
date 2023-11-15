@@ -1,4 +1,4 @@
-import { createGetRequest } from "../../api/http-api"
+import { createGetRequest } from "src/api/http-api"
 
 export const getData = (endpoint,type,setIsLoading) => async (dispatch) => {
     try {

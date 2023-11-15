@@ -1,10 +1,10 @@
 import React from 'react';
 import CardAnt from 'antd/es/card/Card';
-import '../../styles/card.scss'
+import 'src/styles/card.scss'
 import Meta from 'antd/es/card/Meta';
 import { HeartOutlined, StarOutlined } from '@ant-design/icons'
 import { useLocation, useNavigate } from 'react-router-dom';
-import { navigateWithRegex } from '../../utils/navigateWithRegex';
+import { navigateWithRegex } from 'src/utils/navigateWithRegex';
 export const Card = ({ id, name, image, rating }) => {
     const navigate = useNavigate()
     const location = useLocation()
