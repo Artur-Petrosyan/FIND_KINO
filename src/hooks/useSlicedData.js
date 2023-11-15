@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { dataSelector } from "../redux/selectors/shows"
 import { setPageAction } from "../redux/actions/setPage"
 import { getData } from "../redux/actions/asyncGetData"
-import sliceForPagination from "../core/lib/sliceForPagination";
+import {sliceForPagination} from "../core/lib/sliceForPagination";
 
 const useSlicedData = (endpoint, nameForSelector, type, page) => {
     const dispatch = useDispatch()
