@@ -6,7 +6,8 @@ module.exports = {
     webpack : {
         port : '3000',
         alias : {
-            src : resolvePath('./src')
+            src : resolvePath('./src'),
+            components : resolvePath(('./src/components'))
         }
     }
 }
