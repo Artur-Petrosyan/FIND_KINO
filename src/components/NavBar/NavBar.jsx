@@ -1,5 +1,5 @@
-import { useNavigation } from "../../hooks/useNavigation";
-import '../../styles/header.scss'
+import { useNavigation } from "src/hooks/useNavigation";
+import 'src/styles/header.scss'
 import { NavLink } from "react-router-dom";
 const NavBar = ({ navList, subMenu }) => {
     const navigate = useNavigation()

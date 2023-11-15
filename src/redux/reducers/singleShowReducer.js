@@ -1,4 +1,4 @@
-import { SET_SINGLE_SHOW } from "../../constants/types";
+import { SET_SINGLE_SHOW } from "src/constants/types";
 
 const singleShowReducer = (state = [], { type, data }) => {
     switch (type) {

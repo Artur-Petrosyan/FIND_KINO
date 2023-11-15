@@ -1,4 +1,4 @@
-import { SET_PAGE } from "../../constants/types";
+import { SET_PAGE } from "src/constants/types";
 
 const slicePageReducer = (state = [], { type, data }) => {
     switch (type) {

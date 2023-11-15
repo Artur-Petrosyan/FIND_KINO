@@ -1,4 +1,4 @@
-import { GET_SHOW_INFO, SET_FILTRED_BY_SEASON } from "../../constants/types";
+import { GET_SHOW_INFO, SET_FILTRED_BY_SEASON } from "src/constants/types";
 const initialState = {
     episodes: [],
     seasons: [],

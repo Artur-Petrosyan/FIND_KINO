@@ -1,4 +1,4 @@
-import { GET_SHOWS } from "../../constants/types";
+import { GET_SHOWS } from "src/constants/types";
 
 const showReducer = (state = [], { type, data }) => {
     switch (type) {

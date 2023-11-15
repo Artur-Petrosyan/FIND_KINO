@@ -1,13 +1,13 @@
-import { API_ENDPOINTS } from "../../constants/api";
-import { GET_PEOPLES } from "../../constants/types";
-import Card from "../../components/Card/Card";
-import Pagination from "../../components/Pagination/Pagination";
-import Loader from "../../components/Loader/Loader";
+import { API_ENDPOINTS } from "src/constants/api";
+import { GET_PEOPLES } from "src/constants/types";
+import Card from "components/Card/Card";
+import Pagination from "components/Pagination/Pagination";
+import Loader from "components/Loader/Loader";
 import { Row, Col, Select } from 'antd'
-import useSlicedData from "../../hooks/useSlicedData";
+import useSlicedData from "src/hooks/useSlicedData";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { filtredByOption } from "../../utils/filtredByOption";
+import { filtredByOption } from "src/utils/filtredByOption";
 const People = () => {
     const { page } = useParams()
     const {

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { getSingleShow } from '../../redux/actions/asyncSingleShow';
-import { API_ENDPOINTS } from '../../constants/api';
+import { getSingleShow } from 'src/redux/actions/asyncSingleShow';
+import { API_ENDPOINTS } from 'src/constants/api';
 
 
-import NavBar from '../../components/NavBar/NavBar';
-import subMenuList from '../../constants/subMenuList';
-import SingleShowInfo from '../SingleShowInfo/SIngleShowInfo';
-import Loader from '../../components/Loader/Loader';
+import NavBar from 'components/NavBar/NavBar';
+import subMenuList from 'src/constants/subMenuList';
+import SingleShowInfo from 'src/pages/SingleShowInfo/SIngleShowInfo';
+import Loader from 'components/Loader/Loader';
 
 
 const SingleShow = () => {

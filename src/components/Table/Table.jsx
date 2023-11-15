@@ -1,8 +1,8 @@
 import { memo, useEffect, useMemo } from 'react';
-import '../../styles/table.scss'
-import groupBySeasons from "../../utils/filteredTheShowsSeason";
+import 'src/styles/table.scss'
+import groupBySeasons from "src/utils/filteredTheShowsSeason";
 import { useDispatch } from 'react-redux';
-import { setFiltredBySeason } from '../../redux/actions/setFIltredBySeason';
+import { setFiltredBySeason } from 'src/redux/actions/setFIltredBySeason';
 
 const Table = memo(({ showInfo }) => {
     const dispatch = useDispatch()

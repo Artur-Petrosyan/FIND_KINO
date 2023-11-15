@@ -1,2 +1,2 @@
 export * from './SearchPage';
-export {SearchPagePure} from "./components";
+export {SearchPagePure} from "./components/";

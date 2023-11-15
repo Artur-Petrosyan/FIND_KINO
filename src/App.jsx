@@ -7,8 +7,8 @@ import SingleShowInfo from "./pages/SingleShowInfo/SIngleShowInfo";
 
 import { Routes, Route } from 'react-router-dom'
 
-import '../src/styles/common.scss'
-import '../src/styles/reset.scss'
+import './styles/common.scss'
+import './styles/reset.scss'
 import People from "./pages/People/People";
 import SearchPage from "./pages/SearchPage/ui/SearchPage";
 
