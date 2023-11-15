@@ -3,9 +3,9 @@ import React from 'react';
 import { GET_SHOWS } from 'src/constants/types.js';
 import { API_ENDPOINTS } from 'src/constants/api.js';
 
-import Pagination from 'src/components//Pagination/Pagination';
-import Card from 'src/components//Card/Card.jsx';
-import Loader from 'src/components//Loader/Loader.jsx';
+import Pagination from 'components/Pagination/Pagination';
+import Card from 'components/Card/Card.jsx';
+import Loader from 'components/Loader/Loader.jsx';
 
 import useSlicedData from 'src/hooks/useSlicedData.js';
 

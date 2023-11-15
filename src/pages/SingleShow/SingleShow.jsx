@@ -5,10 +5,10 @@ import { getSingleShow } from 'src/redux/actions/asyncSingleShow';
 import { API_ENDPOINTS } from 'src/constants/api';
 
 
-import NavBar from 'src/components//NavBar/NavBar';
+import NavBar from 'components/NavBar/NavBar';
 import subMenuList from 'src/constants/subMenuList';
 import SingleShowInfo from 'src/pages/SingleShowInfo/SIngleShowInfo';
-import Loader from 'src/components//Loader/Loader';
+import Loader from 'components/Loader/Loader';
 
 
 const SingleShow = () => {

@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { singleShowSelector } from "src/redux/selectors/singleShow";
-import Card from "src/components//Card/Card";
+import Card from "components/Card/Card";
 
 const ShowMain = () => {
     const singleShow = useSelector(singleShowSelector)  
