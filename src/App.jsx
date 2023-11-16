@@ -1,6 +1,6 @@
 import Home from "./pages/Home/Home";
 import Header from "./components/Header/Header";
-import Shows from "./pages/Shows/Shows";
+import Shows from "./pages/Shows/ui/Shows";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SingleShow from "./pages/SingleShow/SingleShow";
 import SingleShowInfo from "./pages/SingleShowInfo/SIngleShowInfo";
