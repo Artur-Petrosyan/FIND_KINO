@@ -1,18 +1,17 @@
 import React from "react";
 import {Button, Col, Result, Row} from "antd";
 
-import Loader from "components/Loader/Loader";
-import Card from "components/Card/Card";
-// import {Card} from "src/core";
+import { Card } from "src/core";
 
 import './SearchPagePure.scss'
+import {Loader} from "src/core/ui/components/Loader";
 
 export function SearchPagePure({searchShows, isLoading, navigate}) {
     return (
         <div>
             {searchShows.length ?
                 <Row className='' gutter={20} wrap={true}>
-                    {isLoading ? <Loader/> :
+                    {isLoading ? <Loader /> :
                         searchShows.map(({show}) => {
                                 const {id, name, image, rating} = show
                                 return (
