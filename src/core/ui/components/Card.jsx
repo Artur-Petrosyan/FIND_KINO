@@ -1,21 +1,47 @@
 import React from 'react';
-import Card from 'antd/es/card/Card';
+import CardAnt from 'antd/es/card/Card';
 import 'src/styles/card.scss'
 import Meta from 'antd/es/card/Meta';
 import { HeartOutlined, StarOutlined } from '@ant-design/icons'
 import { useLocation, useNavigate } from 'react-router-dom';
 import { navigateWithRegex } from 'src/utils/navigateWithRegex';
-const _Card = ({ id, name, image, rating }) => {
+
+/**
+ * Renders a card component with the given props.
+ *
+ * @param {object} props - The component's props.
+ * @param {string} props.id - The card's unique identifier.
+ * @param {string} props.name - The card's name.
+ * @param {string} props.image - The card's image URL.
+ * @param {number} props.rating - The card's rating.
+ * @returns {JSX.Element} The rendered card component.
+ *
+ * @example
+ * import React from 'eact';
+ * import { Card } from './Card';
+ *
+ * const card = (
+ *   <Card
+ *     id='1'
+ *     name='Example Card'
+ *     image='https://example.com/image.jpg'
+ *     rating={4.5}
+ *   />
+ * );
+ *
+ * export default card;
+ */
+export const Card = ({ id, name, image, rating }) => {
     const navigate = useNavigate()
     const location = useLocation()
     const path = location.pathname
 
     return (
-        <Card
+        <CardAnt
             className='card'
             key={id}
             title={name}
-            cover={image ? <img src={image} alt='img' className='card__image' /> : <span>Not image</span>}
+            cover={image? <img src={image} alt='img' className='card__image' /> : <span>Not image</span>}
             onClick={() => navigateWithRegex && navigateWithRegex(id, name, navigate,path)}
             size='small'
         >
@@ -27,8 +53,6 @@ const _Card = ({ id, name, image, rating }) => {
                     <span className='card__rating'>{rating}</span>
                 </div>
             </div>
-        </Card >
+        </CardAnt >
     );
 };
-
-export default _Card;

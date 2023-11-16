@@ -1,17 +1,15 @@
 export const useNavigation = () => {
-    const navigateTo = (path) => {
+    return (path) => {
         const lowerPath = path.toLowerCase()
         if (lowerPath === 'home') {
             return '/'
         }
         if (lowerPath === 'shows') {
-            return 'shows/1'
+            return `${path}/1`
         }
-        if(lowerPath === 'people'){
-            return 'people/1'
+        if (lowerPath === 'people') {
+            return `${path}/1`
         }
         return lowerPath
-    }
-
-    return navigateTo;
+    };
 }

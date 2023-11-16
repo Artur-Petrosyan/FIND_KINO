@@ -1,6 +1,6 @@
 import Home from "./pages/Home/Home";
-import Header from "./components/Header/Header";
-import Shows from "./pages/Shows/Shows";
+import {Header} from "src/core";
+import Shows from "./pages/Shows/ui/Shows";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SingleShow from "./pages/SingleShow/SingleShow";
 import SingleShowInfo from "./pages/SingleShowInfo/SIngleShowInfo";
@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import './styles/common.scss'
 import './styles/reset.scss'
-import People from "./pages/People/People";
+import People from "./pages/People/ui/People";
 import SearchPage from "./pages/SearchPage/ui/SearchPage";
 
 const App = () => {
