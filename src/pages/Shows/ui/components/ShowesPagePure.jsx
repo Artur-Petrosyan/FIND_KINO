@@ -1,7 +1,7 @@
 import {Col, Row} from "antd";
 import React from "react";
-import Loader from "components/Loader/Loader";
-import {Card} from "src/core/ui/Card";
+import {Loader} from "src/core/ui";
+import {Card} from "src/core/ui/components/Card";
 import Pagination from "components/Pagination/Pagination";
 
 export function ShowesPagePure(isLoading, sliced, data, pageNumber, setPageNumber) {
