@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import './styles/common.scss'
 import './styles/reset.scss'
-import People from "./pages/People/People";
+import People from "./pages/People/ui/People";
 import SearchPage from "./pages/SearchPage/ui/SearchPage";
 
 const App = () => {
