@@ -1,5 +1,5 @@
 import Home from "./pages/Home/Home";
-import Header from "./components/Header/Header";
+import {Header} from "src/core";
 import Shows from "./pages/Shows/ui/Shows";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import SingleShow from "./pages/SingleShow/SingleShow";
