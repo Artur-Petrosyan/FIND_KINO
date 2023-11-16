@@ -9,7 +9,7 @@ import ShowEpisodes from 'src/pages/ShowEpisodes/ShowEpisodes';
 import ShowMain from 'src/pages/ShowMain/ShowMain';
 import ShowSeasons from 'src/pages/ShowSeasons/ShowSeasons';
 import ShowCast from 'src/pages/ShowCast/ShowCast';
-import Loader from 'components/Loader/Loader';
+import {Loader} from 'src/core';
 const SingleShowInfo = () => {
     const dispatch = useDispatch()
     const { id, info } = useParams()
