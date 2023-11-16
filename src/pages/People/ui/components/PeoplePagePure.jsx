@@ -1,8 +1,8 @@
 import {Col, Row, Select} from "antd";
 import {filtredByOption} from "src/utils/filtredByOption";
 import Pagination from "src/components/Pagination/Pagination";
-import {Card} from "src/core/ui/Card";
-import Loader from "src/components/Loader/Loader";
+import {Card} from "src/core/ui/components/Card";
+import {Loader} from "src/core/ui/components/Loader";
 
 export function PeoplePagePure({
                                    isLoading,
