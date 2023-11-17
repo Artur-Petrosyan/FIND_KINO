@@ -1,16 +1,17 @@
-import Home from "./pages/Home/Home";
-import {Header} from "src/core";
-import Shows from "./pages/Shows/ui/Shows";
-import PageNotFound from "./pages/PageNotFound/PageNotFound";
-import SingleShow from "./pages/SingleShow/SingleShow";
-import SingleShowInfo from "./pages/SingleShowInfo/SIngleShowInfo";
-
 import { Routes, Route } from 'react-router-dom'
+
+import Home from "pages/Home/Home";
+import {Header} from "src/core";
+import Shows from "pages/Shows/ui/Shows";
+import PageNotFound from "pages/PageNotFound/PageNotFound";
+import SingleShow from "pages/SingleShow/ui/SingleShow";
+import SingleShowInfo from "pages/SingleShowInfo/ui/SIngleShowInfo";
+import People from "pages/People/ui/People";
+import SearchPage from "pages/SearchPage/ui/SearchPage";
 
 import './styles/common.scss'
 import './styles/reset.scss'
-import People from "./pages/People/ui/People";
-import SearchPage from "./pages/SearchPage/ui/SearchPage";
+
 
 const App = () => {
   return (
