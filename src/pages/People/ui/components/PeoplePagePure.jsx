@@ -1,6 +1,6 @@
 import {Col, Row, Select} from "antd";
 import {filtredByOption} from "src/utils/filtredByOption";
-import Pagination from "src/components/Pagination/Pagination";
+import {Pagination} from "src/core/ui";
 import {Card} from "src/core/ui/components/Card";
 import {Loader} from "src/core/ui/components/Loader";
 
