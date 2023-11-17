@@ -4,4 +4,4 @@ export {Header} from './components/Header'
 export {NavBar} from './components/NavBar'
 export {Loader} from './components/Loader'
 export {InputSearch} from './components/InputSearch'
-
+export {Pagination} from './components/Pagination'
