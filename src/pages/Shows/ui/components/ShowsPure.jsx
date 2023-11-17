@@ -2,9 +2,10 @@ import {Col, Row} from "antd";
 import React from "react";
 import {Loader} from "src/core/ui";
 import {Card} from "src/core/ui/components/Card";
-import Pagination from "components/Pagination/Pagination";
+import {Pagination} from "src/core/ui";
+import './shows.scss'
 
-export function ShowesPagePure(isLoading, sliced, data, pageNumber, setPageNumber) {
+export function ShowsPure(isLoading, sliced, data, pageNumber, setPageNumber) {
     return (
         <div className='content'>
             {isLoading ? <Loader/> :

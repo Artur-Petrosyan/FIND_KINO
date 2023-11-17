@@ -1,1 +1,1 @@
-export * from './ShowesPagePure';
+export * from './ShowsPure';
