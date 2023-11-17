@@ -1,5 +1,5 @@
-import {useSingleShowViewModel} from "./model";
-import {SingleShowPure} from "./ui/components";
+import {useSingleShowViewModel} from "../model";
+import {SingleShowPure} from "./components";
 
 
 const SingleShow = () => {
