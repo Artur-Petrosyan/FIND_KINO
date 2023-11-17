@@ -7,7 +7,8 @@ module.exports = {
         port : '3000',
         alias : {
             src : resolvePath('./src'),
-            components : resolvePath(('./src/components'))
+            components : resolvePath(('./src/components')),
+            pages : resolvePath(('./src/pages'))
         }
     }
 }
