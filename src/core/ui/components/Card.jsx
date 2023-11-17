@@ -2,9 +2,9 @@ import React from 'react';
 import CardAnt from 'antd/es/card/Card';
 import 'src/styles/card.scss'
 import Meta from 'antd/es/card/Meta';
-import { HeartOutlined, StarOutlined } from '@ant-design/icons'
-import { useLocation, useNavigate } from 'react-router-dom';
-import { navigateWithRegex } from 'src/utils/navigateWithRegex';
+import {HeartOutlined, StarOutlined} from '@ant-design/icons'
+import {navigateWithRegex} from 'src/utils/navigateWithRegex';
+import {useGetLocationPathName} from "../../lib/useGetLocationPathName";
 
 /**
  * Renders a card component with the given props.
@@ -32,9 +32,7 @@ import { navigateWithRegex } from 'src/utils/navigateWithRegex';
  * export default card;
  */
 export const Card = ({ id, name, image, rating }) => {
-    const navigate = useNavigate()
-    const location = useLocation()
-    const path = location.pathname
+    const {navigate, path} = useGetLocationPathName();
 
     return (
         <CardAnt
