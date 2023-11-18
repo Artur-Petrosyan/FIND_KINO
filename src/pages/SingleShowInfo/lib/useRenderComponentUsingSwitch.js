@@ -1,7 +1,7 @@
 import React, {useMemo} from "react";
 import ShowMain from "../../ShowMain/ShowMain";
 import ShowEpisodes from "../../ShowEpisodes/ShowEpisodes";
-import ShowSeasons from "../../ShowSeasons/ShowSeasons";
+import ShowSeasons from "../../ShowSeasons/ui/ShowSeasons";
 import ShowCast from "../../ShowCast/ShowCast";
 
 export const useRenderComponentUsingSwitch = info => useMemo(() => {

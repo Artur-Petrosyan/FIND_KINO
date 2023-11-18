@@ -1,5 +1,5 @@
-import {ShowSeasonsPure} from "./ui/components";
-import {useShowSeasonsViewModel} from "./model";
+import {ShowSeasonsPure} from "./components";
+import {useShowSeasonsViewModel} from "../model";
 
 const ShowSeasons = () => {
     const {showInfo, info} = useShowSeasonsViewModel();
