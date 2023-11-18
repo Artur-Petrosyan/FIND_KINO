@@ -3,8 +3,8 @@ import CardAnt from 'antd/es/card/Card';
 import 'src/styles/card.scss'
 import Meta from 'antd/es/card/Meta';
 import {HeartOutlined, StarOutlined} from '@ant-design/icons'
-import {navigateWithRegex} from 'src/utils/navigateWithRegex';
-import {useGetLocationPathName} from "../../lib/useGetLocationPathName";
+import {useGetLocationPathName} from "src/core/lib/useGetLocationPathName";
+import {navigateWithRegex} from "src/core/lib/navigateWithRegex";
 
 /**
  * Renders a card component with the given props.
