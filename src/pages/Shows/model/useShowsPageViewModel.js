@@ -3,7 +3,7 @@ import useSlicedData from "src/hooks/useSlicedData";
 import {API_ENDPOINTS} from "src/constants/api";
 import {GET_SHOWS} from "src/constants/types";
 
-export function useShowsPageViewModel() {
+export const useShowsPageViewModel = () => {
     const {page} = useParams();
     const {
         setPageNumber,
@@ -13,4 +13,4 @@ export function useShowsPageViewModel() {
         isLoading
     } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS, page)
     return {setPageNumber, sliced, data, pageNumber, isLoading};
-}
+};

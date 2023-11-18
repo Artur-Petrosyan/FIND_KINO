@@ -4,7 +4,7 @@ import {API_ENDPOINTS} from "../../../constants/api";
 import {GET_PEOPLES} from "../../../constants/types";
 import {useState} from "react";
 
-export function usePeoplePageViewModel() {
+export const usePeoplePageViewModel = () => {
     const {page} = useParams()
     const {
         setPageNumber,
@@ -23,4 +23,4 @@ export function usePeoplePageViewModel() {
 
     const [filtredByGender, setFiltredByGender] = useState([])
     return {setPageNumber, sliced, data, pageNumber, isLoading, selectOptions, setFiltredByGender};
-}
+};

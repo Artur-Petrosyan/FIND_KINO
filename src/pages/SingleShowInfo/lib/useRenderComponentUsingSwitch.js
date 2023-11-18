@@ -4,19 +4,17 @@ import ShowEpisodes from "../../ShowEpisodes/ShowEpisodes";
 import ShowSeasons from "../../ShowSeasons/ShowSeasons";
 import ShowCast from "../../ShowCast/ShowCast";
 
-export function useRenderComponentUsingSwitch(info) {
-    return useMemo(() => {
-        switch (info) {
-            case 'main':
-                return <ShowMain/>;
-            case 'episodes':
-                return <ShowEpisodes/>;
-            case 'seasons':
-                return <ShowSeasons/>;
-            case 'cast':
-                return <ShowCast/>;
-            default:
-                return <ShowMain/>
-        }
-    }, [info]);
-}
+export const useRenderComponentUsingSwitch = info => useMemo(() => {
+    switch (info) {
+        case 'main':
+            return <ShowMain/>;
+        case 'episodes':
+            return <ShowEpisodes/>;
+        case 'seasons':
+            return <ShowSeasons/>;
+        case 'cast':
+            return <ShowCast/>;
+        default:
+            return <ShowMain/>
+    }
+}, [info]);

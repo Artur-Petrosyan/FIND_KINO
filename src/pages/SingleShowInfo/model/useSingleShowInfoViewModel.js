@@ -5,7 +5,7 @@ import {getShowInfo} from "src/redux/actions/asyncGetShowInfo";
 import {API_ENDPOINTS} from "src/constants/api";
 import {useRenderComponentUsingSwitch} from "../lib";
 
-export function useSingleShowInfoViewModel() {
+export const useSingleShowInfoViewModel = () => {
     const dispatch = useDispatch()
     const {id, info} = useParams()
     const [isLoading, setIsLoading] = useState(true)
@@ -18,4 +18,4 @@ export function useSingleShowInfoViewModel() {
     }, [id, info, dispatch])
     const renderComponent = useRenderComponentUsingSwitch(info);
     return {isLoading, renderComponent};
-}
+};

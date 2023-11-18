@@ -1,3 +1,4 @@
+import {BASE_URL} from "src/constants/api";
 
 /**
  * Fetches a POST request to the specified endpoint with the provided data.
