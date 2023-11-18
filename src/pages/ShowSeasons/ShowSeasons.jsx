@@ -1,25 +1,9 @@
-import { useSelector } from "react-redux";
-
-import { singleShowInfoSelector } from "src/redux/selectors/singleShowInfo";
-import { useParams } from "react-router-dom";
+import {ShowSeasonsPure} from "./ui/components";
+import {useShowSeasonsViewModel} from "./model";
 
 const ShowSeasons = () => {
-    const showInfo = useSelector(singleShowInfoSelector)
-    const { info } = useParams()
-    return (
-        <div>
-            {showInfo[info].map(({ id, image, number }) => <div key={id} style={{ display: 'flex' }}>
-                <div>
-                    <img src={image?.medium} alt="" />
-                </div>
-                <div>
-                    <h1>
-                        Season {number}
-                    </h1>
-                </div>
-            </div>)}
-        </div>
-    );
+    const {showInfo, info} = useShowSeasonsViewModel();
+    return ShowSeasonsPure(showInfo, info);
 };
 
 export default ShowSeasons;
