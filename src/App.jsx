@@ -1,11 +1,9 @@
-import {Route, Routes} from 'react-router-dom'
-
-
-import {Header} from "src/core";
 import {lazy} from "react";
+import {Route, Routes} from 'react-router-dom'
+import {LazyLoadWrapperHOC} from "./core/lib/lazyLoadWrapperHOC";
+import {Header} from "src/core";
 import './styles/common.scss'
 import './styles/reset.scss'
-import {LazyLoadWrapperHOC} from "./core/lib/lazyLoadWrapperHOC";
 
 const Home = lazy(() => import('pages/Home/Home'))
 const Shows = lazy(() => import('pages/Shows/ui/Shows'))
