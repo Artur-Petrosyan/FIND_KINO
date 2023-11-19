@@ -3,7 +3,10 @@ import {useShowSeasonsViewModel} from "../model";
 
 const ShowSeasons = () => {
     const {showInfo, info} = useShowSeasonsViewModel();
-    return ShowSeasonsPure(showInfo, info);
+    return <ShowSeasonsPure
+        showInfo={showInfo}
+        info={info}
+    />;
 };
 
 export default ShowSeasons;
