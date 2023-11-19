@@ -1,7 +1,7 @@
 import { memo, useEffect, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import { setFiltredBySeason } from 'src/redux/actions/setFIltredBySeason';
-import 'src/styles/table.scss'
+import 'src/components/Table/table.scss'
 import {groupByKey} from "src/core/lib/groupByKey";
 
 const Table = memo(({ showInfo }) => {
