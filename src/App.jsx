@@ -5,7 +5,7 @@ import {Header} from "src/core";
 import {lazy} from "react";
 import './styles/common.scss'
 import './styles/reset.scss'
-import {LazyLoadWrapper} from "./core/lib/lazyLoadWrapper";
+import {LazyLoadWrapperHOC} from "./core/lib/lazyLoadWrapperHOC";
 
 const Home = lazy(() => import('pages/Home/Home'))
 const Shows = lazy(() => import('pages/Shows/ui/Shows'))
@@ -21,14 +21,14 @@ const App = () => {
             <Header/>
             <div className="container">
                 <Routes>
-                    <Route index={true} element={LazyLoadWrapper(<Home/>)}/>
-                    <Route path='search' element={LazyLoadWrapper(<SearchPage/>)}/>
-                    <Route path='shows/:page' element={LazyLoadWrapper(<Shows/>)}/>
-                    <Route path='shows/:page/:id/:name' element={LazyLoadWrapper(<SingleShow/>)}>
-                        <Route path=':info' element={LazyLoadWrapper(<SingleShowInfo/>)}/>
+                    <Route index={true} element={LazyLoadWrapperHOC(<Home/>)}/>
+                    <Route path='search' element={LazyLoadWrapperHOC(<SearchPage/>)}/>
+                    <Route path='shows/:page' element={LazyLoadWrapperHOC(<Shows/>)}/>
+                    <Route path='shows/:page/:id/:name' element={LazyLoadWrapperHOC(<SingleShow/>)}>
+                        <Route path=':info' element={LazyLoadWrapperHOC(<SingleShowInfo/>)}/>
                     </Route>
-                    <Route path="people/:page" element={LazyLoadWrapper(<People/>)}/>
-                    <Route path='*' element={LazyLoadWrapper(<PageNotFound/>)}/>
+                    <Route path="people/:page" element={LazyLoadWrapperHOC(<People/>)}/>
+                    <Route path='*' element={LazyLoadWrapperHOC(<PageNotFound/>)}/>
                 </Routes>
             </div>
         </div>
