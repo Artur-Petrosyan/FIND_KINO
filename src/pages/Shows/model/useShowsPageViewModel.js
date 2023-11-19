@@ -10,7 +10,6 @@ export const useShowsPageViewModel = () => {
         sliced,
         data,
         pageNumber,
-        isLoading
     } = useSlicedData(API_ENDPOINTS.SHOWS, 'shows', GET_SHOWS, page)
-    return {setPageNumber, sliced, data, pageNumber, isLoading};
+    return {setPageNumber, sliced, data, pageNumber};
 };
