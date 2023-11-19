@@ -1,10 +1,14 @@
-import 'src/styles/shows.scss'
 import {useShowsPageViewModel} from "../model";
-import {ShowesPagePure} from "./components";
+import {ShowsPure} from "./components";
 
 const Shows = () => {
-    const {setPageNumber, sliced, data, pageNumber, isLoading} = useShowsPageViewModel();
-    return ShowesPagePure(isLoading, sliced, data, pageNumber, setPageNumber);
+    const {setPageNumber, sliced, data, pageNumber} = useShowsPageViewModel();
+    return <ShowsPure
+        sliced={sliced}
+        data={data}
+        pageNumber={pageNumber}
+        setPageNumber={setPageNumber}
+    />
 };
 
 export default Shows;

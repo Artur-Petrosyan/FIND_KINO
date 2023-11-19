@@ -1,10 +1,15 @@
+
+/**
+ * Custom hook that returns the view model for the people page.
+ * @returns {Object} An object containing the setPageNumber function, sliced data, data, page number, loading status, select options, and a function to set the filtered by gender state.
+ */
 import {useParams} from "react-router-dom";
-import useSlicedData from "../../../hooks/useSlicedData";
-import {API_ENDPOINTS} from "../../../constants/api";
-import {GET_PEOPLES} from "../../../constants/types";
+import useSlicedData from "pages/Shows/lib/useSlicedData";
+import {API_ENDPOINTS} from "src/constants/api";
+import {GET_PEOPLES} from "src/constants/types";
 import {useState} from "react";
 
-export function usePeoplePageViewModel() {
+export const usePeoplePageViewModel = () => {
     const {page} = useParams()
     const {
         setPageNumber,
@@ -23,4 +28,4 @@ export function usePeoplePageViewModel() {
 
     const [filtredByGender, setFiltredByGender] = useState([])
     return {setPageNumber, sliced, data, pageNumber, isLoading, selectOptions, setFiltredByGender};
-}
+};

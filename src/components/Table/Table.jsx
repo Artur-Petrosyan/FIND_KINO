@@ -1,12 +1,12 @@
 import { memo, useEffect, useMemo } from 'react';
-import 'src/styles/table.scss'
-import groupBySeasons from "src/utils/filteredTheShowsSeason";
 import { useDispatch } from 'react-redux';
 import { setFiltredBySeason } from 'src/redux/actions/setFIltredBySeason';
+import 'src/components/Table/table.scss'
+import {groupByKey} from "src/core/lib/groupByKey";
 
 const Table = memo(({ showInfo }) => {
     const dispatch = useDispatch()
-    const showInfoToSeasons = useMemo(() => groupBySeasons(showInfo.episodes), [showInfo.episodes])
+    const showInfoToSeasons = useMemo(() => groupByKey(showInfo.episodes), [showInfo.episodes])
     useEffect(() => {
         dispatch(setFiltredBySeason(showInfoToSeasons))
     }, [showInfoToSeasons,dispatch])
@@ -24,7 +24,7 @@ const Table = memo(({ showInfo }) => {
                         </tr>
                     </thead>
                     <tbody className="table__tbody" >
-                        {item.map(({ id, name, number, rating, airdate }) => (
+                        {item.map(({ name, number, rating, airdate }) => (
                             <tr key={number}>
                                 <th>{number}</th>
                                 <th>{airdate}</th>

@@ -7,13 +7,11 @@ const People = () => {
         sliced,
         data,
         pageNumber,
-        isLoading,
         selectOptions,
         setFiltredByGender
     } = usePeoplePageViewModel();
 
     return <PeoplePagePure
-        isLoading={isLoading}
         selectOptions={selectOptions}
         data={data}
         setFiltredByGender={setFiltredByGender}

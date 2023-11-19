@@ -4,7 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {searchShowsSelector} from "src/redux/selectors/searchShows";
 import getSearchShows from "src/redux/actions/asyncGetSearchShows";
 
-export function useSearchPageViewModel() {
+export const useSearchPageViewModel = () => {
     const location = useLocation()
     const search = new URLSearchParams(location.search)
     const query = search.get('q')
@@ -16,4 +16,4 @@ export function useSearchPageViewModel() {
         dispatch(getSearchShows(query, setIsLoading))
     }, [query, dispatch])
     return {isLoading, navigate, searchShows};
-}
+};

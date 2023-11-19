@@ -19,6 +19,5 @@ export const sliceForPagination = (data, pageNumber) => {
     const limit = 40;
     const lastShow = pageNumber * limit;
     const firstShow = lastShow - limit;
-    const slicedData = data.slice(firstShow, lastShow);
-    return slicedData;
+    return data.slice(firstShow, lastShow);
 };
