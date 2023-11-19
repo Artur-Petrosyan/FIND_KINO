@@ -4,7 +4,7 @@ import {Button, Col, Result, Row} from "antd";
 import { Card } from "src/core";
 
 import './SearchPagePure.scss'
-import {Loader} from "src/core/ui/components/Loader";
+import {Loader} from "src/core/ui/components/Loader/Loader";
 
 export const SearchPagePure = ({searchShows, isLoading, navigate}) => (
     <div>

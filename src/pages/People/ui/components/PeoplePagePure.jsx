@@ -1,6 +1,6 @@
 import {Col, Row, Select} from "antd";
 import {Pagination} from "src/core/ui";
-import {Card} from "src/core/ui/components/Card";
+import {Card} from "src/core/ui/components/Card/Card";
 import {filtredByOption} from "src/pages/People/lib/filtredByOption";
 
 export const PeoplePagePure = ({

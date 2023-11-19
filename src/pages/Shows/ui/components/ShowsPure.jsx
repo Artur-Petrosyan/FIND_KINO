@@ -1,6 +1,6 @@
 import {Col, Row} from "antd";
 import React from "react";
-import {Card} from "src/core/ui/components/Card";
+import {Card} from "src/core/ui/components/Card/Card";
 import {Pagination} from "src/core/ui";
 import './shows.scss'
 
