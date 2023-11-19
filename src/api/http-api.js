@@ -1,7 +1,5 @@
 import {fetchGetRequest} from "../core/lib/http-api/fetchGetRequest";
 
-
-
 export const createGetRequest = async (endpoint) => {
     return fetchGetRequest(endpoint)
 }
