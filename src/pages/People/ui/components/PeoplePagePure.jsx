@@ -1,11 +1,9 @@
 import {Col, Row, Select} from "antd";
 import {Pagination} from "src/core/ui";
 import {Card} from "src/core/ui/components/Card";
-import {Loader} from "src/core/ui/components/Loader";
 import {filtredByOption} from "src/pages/People/lib/filtredByOption";
 
 export const PeoplePagePure = ({
-                                   isLoading,
                                    selectOptions,
                                    data,
                                    setFiltredByGender,
@@ -14,7 +12,6 @@ export const PeoplePagePure = ({
                                    setPageNumber
                                }) => (
     <div className='content'>
-        {isLoading ? <Loader/> : <>
             <Select
                 options={selectOptions}
                 onChange={(gender) => filtredByOption(gender, data, setFiltredByGender)}
@@ -34,6 +31,5 @@ export const PeoplePagePure = ({
                 )}
             </Row>
             <Pagination data={data} pageNumber={pageNumber} pageName='people' setPageNumber={setPageNumber}/>
-        </>}
     </div>
 );
