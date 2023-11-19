@@ -1,7 +1,7 @@
 import {Col, Row} from "antd";
 import React from "react";
 import {Card} from "src/core/ui/components/Card/Card";
-import {Pagination} from "src/core/ui";
+import {Pagination} from "src/core/ui/components";
 import './shows.scss'
 
 export const ShowsPure = ({setPageNumber, sliced, data, pageNumber}) => (

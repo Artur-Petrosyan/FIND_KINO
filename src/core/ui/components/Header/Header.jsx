@@ -18,7 +18,7 @@
  * }
  */
 import { navList } from 'src/constants/headerNavList';
-import {InputSearch} from 'src/core/index';
+import {InputSearch} from 'src/core/ui/components';
 
 import {Button} from '../Button';
 
