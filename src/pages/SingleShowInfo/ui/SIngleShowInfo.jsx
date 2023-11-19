@@ -3,7 +3,10 @@ import {useSingleShowInfoViewModel} from "../model";
 
 const SingleShowInfo = () => {
     const {isLoading, renderComponent} = useSingleShowInfoViewModel();
-    return SingleShowInfoPure(isLoading, renderComponent);
+    return <SingleShowInfoPure
+        isLoading={isLoading}
+        renderComponent={renderComponent}
+    />;
 };
 
 export default SingleShowInfo;
