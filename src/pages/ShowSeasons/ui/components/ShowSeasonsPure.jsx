@@ -1,4 +1,4 @@
-export const ShowSeasonsPure = (showInfo, info) => (
+export const ShowSeasonsPure = ({showInfo, info}) => (
     <div>
         {showInfo[info].map(({id, image, number}) => <div key={id} style={{display: 'flex'}}>
             <div>
