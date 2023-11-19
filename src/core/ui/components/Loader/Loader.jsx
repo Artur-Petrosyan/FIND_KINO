@@ -14,7 +14,7 @@
  *
  * export default loader;
  */
-import 'src/styles/loader.scss'
+import 'src/core/ui/components/Loader/loader.scss'
 export const Loader = () => {
     return (
         <div className="loader-container">

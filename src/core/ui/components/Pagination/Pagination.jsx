@@ -49,7 +49,7 @@
 import {memo} from "react";
 import {useNavigate} from "react-router-dom";
 import PaginationAnt from "antd/es/pagination";
-import 'src/styles/pagination.scss'
+import 'src/core/ui/components/Pagination/pagination.scss'
 
 export const Pagination = memo(({data, setPageNumber, pageNumber, pageName}) => {
     const navigate = useNavigate()

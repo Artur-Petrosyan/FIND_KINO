@@ -1,6 +1,6 @@
 import React from 'react';
 import CardAnt from 'antd/es/card/Card';
-import 'src/styles/card.scss'
+import 'src/core/ui/components/Card/card.scss'
 import Meta from 'antd/es/card/Meta';
 import {HeartOutlined, StarOutlined} from '@ant-design/icons'
 import {useGetLocationPathName} from "src/core/lib/useGetLocationPathName";

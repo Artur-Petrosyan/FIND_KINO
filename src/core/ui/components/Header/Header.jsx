@@ -18,13 +18,13 @@
  * }
  */
 import { navList } from 'src/constants/headerNavList';
-import {InputSearch} from 'src/core';
+import {InputSearch} from 'src/core/index';
 
-import {Button} from './Button';
+import {Button} from '../Button';
 
-import {NavBar} from 'src/core/ui';
+import {NavBar} from '../NavBar/NavBar';
 
-import 'src/styles/header.scss'
+import 'src/core/ui/components/Header/header.scss'
 
 export const Header = () => {
     return (
