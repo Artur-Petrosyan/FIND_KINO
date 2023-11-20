@@ -1,7 +1,0 @@
-export {Button} from './components/Button'
-export {Card} from './components/Card/Card'
-export {Header} from './components/Header/Header'
-export {NavBar} from './components/NavBar/NavBar'
-export {Loader} from './components/Loader/Loader'
-export {InputSearch} from './components/InputSearch'
-export {Pagination} from './components/Pagination/Pagination'

@@ -1,5 +1,5 @@
 import {Col, Row, Select} from "antd";
-import {Pagination} from "src/core/ui";
+import {Pagination} from "src/core/ui/components";
 import {Card} from "src/core/ui/components/Card/Card";
 import {filtredByOption} from "src/pages/People/lib/filtredByOption";
 
